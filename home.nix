@@ -5,7 +5,7 @@
   # paths it should manage.
   home = {
     username = "edmisml";
-    homeDirectory = "/Users/edmisml";
+    homeDirectory = "/home/edmisml";
     sessionVariables = {
       LANG = "en_US.UTF-8";
       EDITOR = "vim";
@@ -22,23 +22,27 @@
 
     packages = with pkgs; [
       bottom
-      httpie
-      exa
-      tokei
-      wget
+      clang
       curl
-      sbt
-      ammonite
-      tree
+      docker
+      docker-compose
+      duf
+      exa
+      fd
+      fish
+      fx
+      gdb
+      httpie
+      jless
+      llvm
+      pstree
       python3
       ranger
-      duf
-      jless
-      tldr
       ripgrep
-      fd
-      fx
-      pstree
+      tldr
+      tokei
+      tree
+      wget
     ];
   };
 
@@ -46,6 +50,35 @@
     bat = {
       enable = true;
       config.theme = "ansi";
+    };
+    starship = {
+      enable = true;
+      # Configuration written to ~/.config/starship.toml
+      settings = {
+        # add_newline = false;
+
+        c = {};
+
+        character = {
+          success_symbol = "[➜](bold green)";
+          error_symbol = "[➜](bold red)";
+        };
+
+        directory = {
+          truncation_length = 6;
+          truncation_symbol = ".../";
+        };
+
+        git_branch = {};
+
+        git_commit = {};
+
+        rust = {}; 
+        
+        scala = {};
+
+        # package.disabled = true;
+      };
     };
     less.enable = true;
     fzf.enable = true;
@@ -55,6 +88,7 @@
 
   imports = [
     ./programs/git.nix
+    ./programs/neovim.nix
   ];
 
   # Let Home Manager install and manage itself.
