@@ -69,6 +69,7 @@
   };
 
   imports = [
+    ./fonts
     ./programs/git.nix
     ./programs/neovim.nix
     ./programs/kitty.nix
