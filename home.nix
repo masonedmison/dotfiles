@@ -22,19 +22,22 @@
 
     packages = with pkgs; [
       bottom
-      clang
+      cargo
+      chicken
+      # clang
       curl
-      docker
-      docker-compose
       duf
       exa
       fd
       fish
       fx
       gdb
+      graphviz
       httpie
       jless
-      llvm
+      # llvm
+      nil
+      p7zip
       pstree
       python3
       ranger
@@ -43,6 +46,7 @@
       tokei
       tree
       wget
+      xclip
     ];
   };
 
@@ -76,9 +80,13 @@
         rust = {}; 
         
         scala = {};
-
-        # package.disabled = true;
       };
+    };
+    fish = {
+      enable = true;
+      shellInit = ''
+        starship init fish | source
+        set -gx'';
     };
     less.enable = true;
     fzf.enable = true;
@@ -89,6 +97,7 @@
   imports = [
     ./programs/git.nix
     ./programs/neovim.nix
+    ./programs/kitty.nix
   ];
 
   # Let Home Manager install and manage itself.
