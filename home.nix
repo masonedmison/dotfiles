@@ -55,33 +55,6 @@
       enable = true;
       config.theme = "ansi";
     };
-    starship = {
-      enable = true;
-      # Configuration written to ~/.config/starship.toml
-      settings = {
-        # add_newline = false;
-
-        c = {};
-
-        character = {
-          success_symbol = "[➜](bold green)";
-          error_symbol = "[➜](bold red)";
-        };
-
-        directory = {
-          truncation_length = 6;
-          truncation_symbol = ".../";
-        };
-
-        git_branch = {};
-
-        git_commit = {};
-
-        rust = {}; 
-        
-        scala = {};
-      };
-    };
     fish = {
       enable = true;
       shellInit = ''
@@ -98,6 +71,7 @@
     ./programs/git.nix
     ./programs/neovim.nix
     ./programs/kitty.nix
+    ./programs/starship.nix
   ];
 
   # Let Home Manager install and manage itself.
