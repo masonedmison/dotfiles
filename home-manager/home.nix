@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, kmonad, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -8,7 +8,7 @@
     homeDirectory = "/home/edmisml";
     sessionVariables = {
       LANG = "en_US.UTF-8";
-      EDITOR = "vim";
+      EDITOR = "nvim";
     };
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
@@ -35,6 +35,7 @@
       graphviz
       httpie
       jless
+      kmonad
       # llvm
       nil
       p7zip
