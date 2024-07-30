@@ -68,9 +68,12 @@
     jq.enable = true;
   };
 
+  xdg.configFile = {"foo" = { text = '' your config here ''; };};
+
   imports = [
     ./fonts
     ./programs/git.nix
+    ./programs/firefox
     ./programs/neovim.nix
     ./programs/kitty.nix
     ./programs/starship.nix
@@ -78,4 +81,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  xdg = {
+    enable = true;
+  };
 }
