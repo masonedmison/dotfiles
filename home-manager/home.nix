@@ -1,6 +1,27 @@
-{ pkgs, kmonad, ... }:
+{ config, pkgs, inputs, ... }:
 
+let 
+  system = "x86_64-linux";
+  kmonad = inputs.kmonad.packages.${system}.default;
+  nixGLIntel = inputs.nixGL.packages."${system}".nixGLIntel;
+in
 {
+  nixGL.prefix = "${nixGLIntel}/bin/nixGLIntel";
+
+  imports = [
+    (builtins.fetchurl {
+      url = "https://raw.githubusercontent.com/Smona/home-manager/nixgl-compat/modules/misc/nixgl.nix";
+      sha256 = "0g5yk54766vrmxz26l3j9qnkjifjis3z2izgpsfnczhw243dmxz9";
+    })
+    ./fonts
+    ./programs/git.nix
+    ./programs/firefox.nix
+    ./programs/neovim.nix
+    ./programs/kitty.nix
+    ./programs/starship.nix
+  ];
+
+
   home = {
 
     username = "edmisml";
@@ -57,15 +78,6 @@
     htop.enable = true;
     jq.enable = true;
   };
-
-  imports = [
-    ./fonts
-    ./programs/git.nix
-    ./programs/firefox.nix
-    ./programs/neovim.nix
-    ./programs/kitty.nix
-    ./programs/starship.nix
-  ];
 
   nixpkgs.config = {
     allowUnfree = true;

@@ -12,14 +12,17 @@
       url = "git+https://github.com/kmonad/kmonad?submodules=1&dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixGL = {
+      url = "github:nix-community/nixGL/310f8e49a149e4c9ea52f1adf70cdc768ec53f8a";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, kmonad, ... }:
+  outputs = { nixpkgs, home-manager, kmonad, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
-      kmonadpkg = kmonad.packages.${system}.default;
     in {
       homeConfigurations.edmisml = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -28,9 +31,9 @@
         # the path to your home.nix.
         modules = [ ./home.nix ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs = { kmonad = kmonadpkg; };
+        extraSpecialArgs = {
+          inherit inputs;
+        };
       };
     };
 }
