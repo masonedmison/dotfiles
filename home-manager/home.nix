@@ -4,6 +4,7 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home = {
+
     username = "edmisml";
     homeDirectory = "/home/edmisml";
     sessionVariables = {
@@ -26,6 +27,7 @@
       chicken
       # clang
       curl
+      discord
       duf
       exa
       fd
@@ -38,6 +40,7 @@
       kmonad
       # llvm
       nil
+      obsidian
       p7zip
       pstree
       python3
@@ -68,20 +71,20 @@
     jq.enable = true;
   };
 
-  xdg.configFile = {"foo" = { text = '' your config here ''; };};
-
   imports = [
     ./fonts
     ./programs/git.nix
-    ./programs/firefox
+    ./programs/firefox.nix
     ./programs/neovim.nix
     ./programs/kitty.nix
     ./programs/starship.nix
   ];
 
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = _: true;
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  xdg = {
-    enable = true;
-  };
 }
