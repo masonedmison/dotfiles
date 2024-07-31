@@ -35,14 +35,12 @@ in
     packages = with pkgs; [
       bottom
       cargo
-      chicken
       coursier
       curl
       discord
       duf
       fd
       fish
-      fx
       gdb
       graphviz
       httpie
@@ -60,7 +58,6 @@ in
       tokei
       tree
       wget
-      xclip
     ];
   };
 
