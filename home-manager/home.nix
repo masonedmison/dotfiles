@@ -36,6 +36,7 @@ in
       bottom
       cargo
       chicken
+      coursier
       curl
       discord
       duf
