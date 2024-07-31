@@ -12,6 +12,7 @@
       rb = "rebase -i --autostash";
       lb = "log -n 10 --oneline";
       rbc = "rebase --continue";
+      c = "commit";
     };
 
     ignores = [
