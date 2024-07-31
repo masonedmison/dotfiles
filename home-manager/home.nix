@@ -55,6 +55,7 @@ in
       python3
       ranger
       ripgrep
+      spotify
       tldr
       tokei
       tree
