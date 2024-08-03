@@ -9,5 +9,8 @@
       package = pkgs.jetbrains-mono; 
     };
     package = (config.lib.nixGL.wrap pkgs.kitty);
+    settings = {
+      enabled_layouts = "tall:bias=50;full_size=1;mirrored=false";   
+    };
   };
 }

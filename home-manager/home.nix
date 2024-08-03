@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 let 
   system = "x86_64-linux";
@@ -46,7 +46,7 @@ in
       httpie
       jless
       kmonad
-      nil
+      nixd
       obsidian
       p7zip
       pstree
