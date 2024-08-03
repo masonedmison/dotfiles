@@ -2,7 +2,6 @@
 
 let 
   system = "x86_64-linux";
-  kmonad = inputs.kmonad.packages.${system}.default;
   nixGLIntel = inputs.nixGL.packages."${system}".nixGLIntel;
 in
 {
