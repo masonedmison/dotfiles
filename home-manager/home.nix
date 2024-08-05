@@ -1,8 +1,7 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, stdenv, ... }:
 
 let 
-  system = "x86_64-linux";
-  nixGLIntel = inputs.nixGL.packages."${system}".nixGLIntel;
+  nixGLIntel = inputs.nixGL.packages."${pkgs.system}".nixGLIntel;
 in
 {
   nixGL.prefix = "${nixGLIntel}/bin/nixGLIntel";
@@ -24,7 +23,9 @@ in
   home = {
 
     username = "edmisml";
-    homeDirectory = "/home/edmisml";
+    homeDirectory = 
+      if pkgs.stdenv.isLinux then "/home/edmisml"
+      else "/Users/edmisml";
     sessionVariables = {
       LANG = "en_US.UTF-8";
       EDITOR = "nvim";

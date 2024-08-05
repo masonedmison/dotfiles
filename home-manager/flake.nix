@@ -19,22 +19,18 @@
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      mkHm = modules: system: extraArgs: home-manager.lib.homeManagerConfiguration {
+         inherit modules;
+         pkgs = nixpkgs.legacyPackages.${system};
+         extraSpecialArgs = extraArgs;
+      };
 
     in {
-      homeConfigurations.edmisml = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ 
-          ./home.nix 
-        ];
-
-        extraSpecialArgs = {
-          inherit inputs;
-        };
+      homeConfigurations = {
+        "edmisml@popos" = 
+          mkHm [./home.nix] "x86_64-linux" {inherit inputs; };
+        "edmisml@mbp16" = 
+          mkHm [./home.nix] "aarch_64-darwin" {inherit inputs; };
       };
     };
 }
