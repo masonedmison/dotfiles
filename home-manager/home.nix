@@ -12,6 +12,7 @@ in
       sha256 = "0g5yk54766vrmxz26l3j9qnkjifjis3z2izgpsfnczhw243dmxz9";
     })
     ./fonts
+    ./programs/vscode
     ./programs/git.nix
     ./programs/firefox.nix
     ./programs/neovim.nix
