@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.git = {
     enable = true;
@@ -36,6 +36,4 @@
       rerere.enabled = true;
     };
   };
-
-  home.packages = [ pkgs.git-crypt ];
 }
