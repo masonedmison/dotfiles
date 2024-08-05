@@ -1,14 +1,7 @@
 { pkgs, lib, inputs, ... }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-      extraPolicies = {
-        OverrideFirstRunPage = "";
-        OverridePostUpdatePage = "";
-        DontCheckDefaultBrowser = true;
-        DisplayBookmarksToolbar = "always";
-      };
-    };
+    package = pkgs.firefox-bin;
     profiles."edmisml" = {
         id = 0;
         name = "default";

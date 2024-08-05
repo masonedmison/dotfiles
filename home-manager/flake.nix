@@ -15,13 +15,21 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"; 
       inputs.nixpkgs.follows = "nixpkgs"; 
     };
+    nixpkgs-firefox-darwin.url = "github:bandithedoge/nixpkgs-firefox-darwin";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       mkHm = modules: system: extraArgs: home-manager.lib.homeManagerConfiguration {
          inherit modules;
-         pkgs = nixpkgs.legacyPackages.${system};
+         pkgs = 
+          let pkgs = 
+            nixpkgs.legacyPackages.${system};
+          in
+            if pkgs.lib.strings.hasSuffix "darwin" system then
+              pkgs.extend inputs.nixpkgs-firefox-darwin.overlay
+            else
+              pkgs;
          extraSpecialArgs = extraArgs;
       };
 
