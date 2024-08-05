@@ -15,6 +15,7 @@
       c = "commit";
       can = "commit --amend --no-edit";
       ca = "commit --amend";
+      p = "push";
     };
 
     ignores = [

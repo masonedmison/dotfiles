@@ -1,6 +1,6 @@
 { pkgs, inputs, stdenv, ... }:
 
-let 
+let
   nixGLIntel = inputs.nixGL.packages."${pkgs.system}".nixGLIntel;
 in
 {
@@ -24,7 +24,7 @@ in
   home = {
 
     username = "edmisml";
-    homeDirectory = 
+    homeDirectory =
       if pkgs.stdenv.isLinux then "/home/edmisml"
       else "/Users/edmisml";
     sessionVariables = {
@@ -41,7 +41,6 @@ in
       discord
       duf
       fd
-      fish
       gdb
       graphviz
       httpie
@@ -72,6 +71,9 @@ in
       shellInit = ''
         starship init fish | source
         set -gx'';
+      shellAliases = {
+        g = "git";
+      };
     };
     less.enable = true;
     fzf.enable = true;
