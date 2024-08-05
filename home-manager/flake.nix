@@ -26,7 +26,7 @@
           let pkgs = 
             nixpkgs.legacyPackages.${system};
           in
-            if pkgs.lib.strings.hasSuffix "darwin" system then
+            if pkgs.stdenv.isDarwin then
               pkgs.extend inputs.nixpkgs-firefox-darwin.overlay
             else
               pkgs;
