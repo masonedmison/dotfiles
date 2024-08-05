@@ -11,9 +11,9 @@
       url = "github:nix-community/nixGL/310f8e49a149e4c9ea52f1adf70cdc768ec53f8a";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    firefox-addons = { 
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"; 
-      inputs.nixpkgs.follows = "nixpkgs"; 
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-firefox-darwin.url = "github:bandithedoge/nixpkgs-firefox-darwin";
   };
@@ -22,8 +22,8 @@
     let
       mkHm = modules: system: extraArgs: home-manager.lib.homeManagerConfiguration {
          inherit modules;
-         pkgs = 
-          let pkgs = 
+         pkgs =
+          let pkgs =
             nixpkgs.legacyPackages.${system};
           in
             if pkgs.stdenv.isDarwin then
@@ -35,10 +35,10 @@
 
     in {
       homeConfigurations = {
-        "edmisml@popos" = 
+        "edmisml@popos" =
           mkHm [./home.nix] "x86_64-linux" {inherit inputs; };
-        "edmisml@mbp16" = 
-          mkHm [./home.nix] "aarch_64-darwin" {inherit inputs; };
+        "edmisml@mbp16" =
+          mkHm [./home.nix] "aarch64-darwin" {inherit inputs; };
       };
     };
 }
