@@ -13,6 +13,8 @@
       lb = "log -n 10 --oneline";
       rbc = "rebase --continue";
       c = "commit";
+      can = "commit --amend --no-edit";
+      ca = "commit --amend";
     };
 
     ignores = [
