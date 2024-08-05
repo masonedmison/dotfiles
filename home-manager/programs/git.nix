@@ -28,6 +28,7 @@
       "**/.direnv/"
       "**/.DS_Store"
       "**/.history/"
+      "**/.vscode/"
     ];
 
     extraConfig = {
