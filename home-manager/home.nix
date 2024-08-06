@@ -47,6 +47,7 @@ in
       jless
       kmonad
       nixd
+      nixpkgs-fmt
       obsidian
       p7zip
       pstree
