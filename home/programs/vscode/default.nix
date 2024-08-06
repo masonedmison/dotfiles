@@ -40,6 +40,9 @@ let
     userSettings = {
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nixd";
+      "nixd.options.home-manager" = {
+        "expr" = "(builtins.getFlake \"/Users/edmisml/dotfiles/home-manager\").homeConfigurations.\"edmisml@mbp16\".options";
+      };
     };
   };
 
@@ -82,7 +85,10 @@ in
         minimap.enabled = false;
         cursorBlinking = "solid";
       };
-      terminal.integrated.defaultProfile.linux = "fish";
+      terminal.integrated.defaultProfile = {
+        linux = "fish";
+        osx = "fish";
+      };
       files = {
         searchExclude = {
           "**/.history" = true;

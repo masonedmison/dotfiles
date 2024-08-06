@@ -41,11 +41,11 @@ in
       discord
       duf
       fd
-      gdb
+      # gdb
       graphviz
       httpie
       jless
-      kmonad
+      # kmonad
       nixd
       nixpkgs-fmt
       obsidian
