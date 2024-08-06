@@ -22,11 +22,11 @@ in
 
 
   home = {
-
     username = "edmisml";
-    homeDirectory =
+    homeDirectory = pkgs.lib.mkForce (
       if pkgs.stdenv.isLinux then "/home/edmisml"
-      else "/Users/edmisml";
+      else "/Users/edmisml"
+    );
     sessionVariables = {
       LANG = "en_US.UTF-8";
       EDITOR = "nvim";
@@ -38,7 +38,7 @@ in
       cargo
       coursier
       curl
-      discord
+      # discord
       duf
       fd
       # gdb
@@ -54,7 +54,7 @@ in
       python3
       ranger
       ripgrep
-      spotify
+      # spotify
       tldr
       tokei
       tree

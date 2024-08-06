@@ -1,26 +1,28 @@
-{ pkgs, home-manager, ... }@inputs:
+{ pkgs, ... }@inputs:
 {
-  imports =
-    [ (home-manager.darwinModules.home-manager) ];
-
   services.nix-daemon.enable = true;
 
   # It seems like this is needed even though I don't use zsh?
   programs.zsh.enable = true;
+  homebrew.enable = true;
+  homebrew.onActivation.cleanup = "uninstall";
 
   nix = {
+    settings.trusted-users = [ "edmisml" ];
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-  };
+    package = pkgs.nix;
 
-  home-manager = {
-    userGlobalPackages = true;
-    useUserPackages = true;
-    # TODO take "machine" as input parameter
-    users."edmisml" = import ../home/common.nix;
   };
 
   system.stateVersion = 4;
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = _: true;
+    };
+    system = "aarch64-darwin";
+  };
 }

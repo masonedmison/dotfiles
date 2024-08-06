@@ -1,7 +1,9 @@
 { pkgs, lib, inputs, ... }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-bin;
+    package =
+      if pkgs.stdenv.isLinux then pkgs.firefox-bin
+      else null;
     profiles."edmisml" = {
         id = 0;
         name = "default";
@@ -44,12 +46,12 @@
           "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
           "browser.newtabpage.activity-stream.showSponsored" = false;
           "browser.newtabpage.pinned" = false;
-          "extensions.pocket.enabled" = false; 
+          "extensions.pocket.enabled" = false;
 
           # Disable "save password" prompt
           "signon.rememberSignons" = false;
 
-          "browser.startup.homepage" = "https://google.com";     
+          "browser.startup.homepage" = "https://google.com";
           "browser.urlbar.placeholderName" ="Google";
         };
         search = {
@@ -76,7 +78,7 @@
         ];
         extraConfig = ''
         user_pref("extensions.autoDisableScopes", 0);
-        user_pref("extensions.enabledScopes", 15); 
+        user_pref("extensions.enabledScopes", 15);
         '';
     };
   };
