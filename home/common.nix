@@ -14,8 +14,6 @@ in
     ./fonts
     ./programs/vscode
     ./programs/git.nix
-    # doesn't work when using package from
-    # ./programs/firefox.nix
     ./programs/neovim.nix
     ./programs/kitty.nix
     ./programs/starship.nix
@@ -39,14 +37,11 @@ in
       cargo
       coursier
       curl
-      # discord
       duf
       fd
-      # gdb
       graphviz
       httpie
       jless
-      # kmonad
       nixd
       nixpkgs-fmt
       obsidian
@@ -55,7 +50,6 @@ in
       python3
       ranger
       ripgrep
-      # spotify
       tldr
       tokei
       tree

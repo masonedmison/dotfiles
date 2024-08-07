@@ -30,7 +30,7 @@
         extraSpecialArgs = extraArgs;
       };
 
-      mkDarwin = { extraModules ? [ ], extraArgs ? { } }: darwin.lib.darwinSystem {
+      mkDarwin = { extraModules ? [ ], extraArgs ? { }, extraHmModules ? [ ] }: darwin.lib.darwinSystem {
         system = "aarch64-linux";
         specialArgs = { inherit self; };
         modules =
@@ -42,7 +42,9 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 # TODO take "machine" as input parameter
-                users.edmisml = import ./home/common.nix ;
+                users.edmisml = {
+                  imports = extraHmModules;
+                };
                 extraSpecialArgs = { inherit inputs; };
               };
             }
@@ -52,12 +54,12 @@
     in
     {
       darwinConfigurations = {
-        edmisml = mkDarwin { extraModules = [./darwin/common.nix]; };
+        edmisml = mkDarwin { extraModules = [./darwin/common.nix]; extraHmModules = [ ./home/mbp16.nix ]; };
       };
 
       homeConfigurations = {
         "edmisml@popos" =
-          mkHm [./home/common.nix] "x86_64-linux" { inherit inputs; };
+          mkHm [./home/s76.nix] "x86_64-linux" { inherit inputs; };
       };
     };
 }
