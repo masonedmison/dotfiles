@@ -40,12 +40,19 @@ let
     userSettings = {
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nixd";
-      "nixd.options" = {
-        "home-manager" = {
-          "expr" = "(builtins.getFlake \"/Users/edmisml/dotfiles\").homeConfigurations.\"edmisml@mbp16\".options";
-        };
-        "nix-darwin" = {
-          "expr" = "(builtins.getFlake \"/Users/edmisml/dotfiles\").darwinConfigurations.\"edmisml\".options";
+      "nix.serverSettings" = {
+        "nixd" = {
+          "nixpkgs" = {
+            "expr" = "import (builtins.getFlake \"/Users/edmisml/dotfiles\").inputs.nixpkgs { }   ";
+          };
+          "options" = {
+            "home-manager" = {
+              "expr" = "(builtins.getFlake \"/Users/edmisml/dotfiles\").homeConfigurations.\"edmisml@mbp16\".options";
+            };
+            "nix-darwin" = {
+              "expr" = "(builtins.getFlake \"/Users/edmisml/dotfiles\").darwinConfigurations.\"edmisml\".options";
+            };
+          };
         };
       };
     };
