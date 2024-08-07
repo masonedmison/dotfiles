@@ -7,13 +7,19 @@
   homebrew.enable = true;
   homebrew.onActivation.cleanup = "uninstall";
 
+  environment = {
+    shells = [ pkgs.fish ];
+    loginShell = pkgs.fish;
+    systemPath = [ "/opt/homebrew/bin" ];
+    pathsToLink = [ "/Applications" ];
+  };
+
   nix = {
     settings.trusted-users = [ "edmisml" ];
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
     package = pkgs.nix;
-
   };
 
   system.stateVersion = 4;
@@ -25,4 +31,6 @@
     };
     system = "aarch64-darwin";
   };
+
+  security.pam.enableSudoTouchIdAuth = true;
 }

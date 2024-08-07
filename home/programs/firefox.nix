@@ -1,9 +1,7 @@
 { pkgs, lib, inputs, ... }: {
   programs.firefox = {
     enable = true;
-    package =
-      if pkgs.stdenv.isLinux then pkgs.firefox-bin
-      else null;
+    package = pkgs.firefox-bin;
     profiles."edmisml" = {
         id = 0;
         name = "default";

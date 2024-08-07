@@ -1,8 +1,9 @@
 { config, pkgs, ... }: {
   programs.kitty = {
     enable = true;
-    theme = "Space Gray Eighties";
+    shellIntegration.enableFishIntegration = true;
     extraConfig = "shell fish";
+    theme = "Space Gray Eighties";
     font = {
       name = "JetBrains Mono";
       size =

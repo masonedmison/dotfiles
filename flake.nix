@@ -57,7 +57,7 @@
 
       homeConfigurations = {
         "edmisml@popos" =
-          mkHm [ ./home/common.nix ] "x86_64-linux" { inherit inputs; };
+          mkHm [./home/common.nix] "x86_64-linux" { inherit inputs; };
       };
     };
 }

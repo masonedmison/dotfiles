@@ -14,7 +14,8 @@ in
     ./fonts
     ./programs/vscode
     ./programs/git.nix
-    ./programs/firefox.nix
+    # doesn't work when using package from
+    # ./programs/firefox.nix
     ./programs/neovim.nix
     ./programs/kitty.nix
     ./programs/starship.nix
