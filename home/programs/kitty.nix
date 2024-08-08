@@ -18,7 +18,7 @@
         (config.lib.nixGL.wrap pkgs.kitty)
       else pkgs.kitty;
     settings = {
-      enabled_layouts = "tall:bias=50;full_size=1;mirrored=false,*";
+      enabled_layouts = "fat:bias=70;full_size=1;mirrored=false,tall:bias=50;full_size=1;mirrored=false,*";
       # disable blinky cursor
       cursor_blink_interval = 0;
     };
