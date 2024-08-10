@@ -1,13 +1,18 @@
 { pkgs, ... }: {
   imports = [
-      ./programs/firefox.nix
-      ./common.nix
-    ];
+    ./programs/firefox.nix
+    ./common.nix
+  ];
 
-  packages = with pkgs; [
+  home.packages = with pkgs; [
     discord
     gdb
     kmonad
     spotify
   ];
+
+  home.file.".config/kmonad" = {
+    source = ./kmonad/config.kbd;
+  };
 }
+
