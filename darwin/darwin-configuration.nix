@@ -33,4 +33,23 @@
   };
 
   security.pam.enableSudoTouchIdAuth = true;
+
+  system.keyboard.remapCapsLockToEscape = true;
+  system.defaults = {
+    trackpad.Clicking = true;
+    finder.AppleShowAllExtensions = true;
+    finder.ShowStatusBar = true;
+    finder.FXEnableExtensionChangeWarning = false;
+    finder._FXShowPosixPathInTitle = true;
+    finder.CreateDesktop = false;
+    dock.autohide = true;
+    dock.orientation = "right";
+    dock.show-recents = false;
+    dock.tilesize = 40;
+    dock.dashboard-in-overlay = true;
+    dock.static-only = true;
+    NSGlobalDomain.KeyRepeat = 2;
+    NSGlobalDomain.AppleInterfaceStyle = "Dark";
+    NSGlobalDomain.AppleShowAllFiles = true;
+  };
 }
