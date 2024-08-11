@@ -36,6 +36,7 @@
       pull = { ff = "only"; };
       init.defaultBranch = "main";
       rerere.enabled = true;
+      core.editor = "nvim";
     };
   };
 }
