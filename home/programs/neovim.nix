@@ -7,6 +7,6 @@
   # to ~/.config/nvim for quicker update cycles
   xdg.configFile."nvim" = {
     recursive = true;
-    source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/home/nvim;
+    source = config.lib.file.mkOutOfStoreSymlink /home/edmisml/dotfiles/home/nvim;
   };
 }
