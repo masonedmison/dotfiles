@@ -1,4 +1,4 @@
--- toggleterm
+-- toggletermtog
 -- https://github.com/akinsho/toggleterm.nvim
 
 return {
@@ -30,7 +30,7 @@ return {
     vim.keymap.set('n', '<leader>ta', '<cmd>:lua _AMM_TOGGLE()<CR>', { desc = '[T]oggle [a]mmonite terminal' })
 
     require('toggleterm').setup {
-      size = 20,
+      size = 15,
       open_mapping = [[<c-\>]],
       hide_numbers = true,
       shade_filetypes = {},
