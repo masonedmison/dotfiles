@@ -34,6 +34,7 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
+  system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
   system.defaults = {
     trackpad.Clicking = true;
