@@ -5,12 +5,10 @@ return {
   'akinsho/toggleterm.nvim',
   version = '2.12.0',
   config = function()
-    function _G.set_terminal_keymaps(term)
+    function _G.set_terminal_keymaps()
       local opts = { buffer = 0 }
-      if term.cmd ~= 'lazygit' then
-        vim.api.nvim_buf_set_keymap(term.bufnr, 't', '<esc>', [[<C-\><C-n>]], opts)
-      end
 
+      vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
       vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
       vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
       vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
@@ -20,7 +18,7 @@ return {
     end
 
     -- if you only want these mappings for toggle term use term://*toggleterm#* instead
-    vim.cmd 'autocmd! TermOpen term://* lua set_terminal_keymaps()'
+    vim.cmd 'autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()'
 
     local Terminal = require('toggleterm.terminal').Terminal
 
