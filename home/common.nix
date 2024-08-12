@@ -42,6 +42,7 @@ in
       graphviz
       httpie
       jless
+      lazygit
       nixd
       nixpkgs-fmt
       obsidian

@@ -5,9 +5,12 @@ return {
   'akinsho/toggleterm.nvim',
   version = '2.12.0',
   config = function()
-    function _G.set_terminal_keymaps()
+    function _G.set_terminal_keymaps(term)
       local opts = { buffer = 0 }
-      vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+      if term.cmd ~= 'lazygit' then
+        vim.api.nvim_buf_set_keymap(term.bufnr, 't', '<esc>', [[<C-\><C-n>]], opts)
+      end
+
       vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
       vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
       vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
