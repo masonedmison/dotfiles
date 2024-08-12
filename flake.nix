@@ -42,7 +42,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 # TODO take "machine" as input parameter
-                users.edmisml = {
+                users.medmison = {
                   imports = extraHmModules;
                 };
                 extraSpecialArgs = { inherit inputs; };
@@ -54,12 +54,12 @@
     in
     {
       darwinConfigurations = {
-        edmisml = mkDarwin { extraModules = [./darwin/common.nix]; extraHmModules = [ ./home/mbp16.nix ]; };
+        edmisml = mkDarwin { extraModules = [ ./darwin/common.nix ]; extraHmModules = [ ./home/mbp16.nix ]; };
+        medmison = mkDarwin { extraModules = [ ./darwin/common.nix ]; extraHmModules = [ ./home/mbp16M3.nix ]; };
       };
-
       homeConfigurations = {
         "edmisml@popos" =
-          mkHm [./home/s76.nix] "x86_64-linux" { inherit inputs; };
+          mkHm [ ./home/s76.nix ] "x86_64-linux" { inherit inputs; };
       };
     };
 }

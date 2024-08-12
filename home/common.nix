@@ -21,10 +21,10 @@ in
 
 
   home = {
-    username = "edmisml";
+    username = "medmison";
     homeDirectory = pkgs.lib.mkForce (
       if pkgs.stdenv.isLinux then "/home/edmisml"
-      else "/Users/edmisml"
+      else "/Users/medmison"
     );
     sessionVariables = {
       LANG = "en_US.UTF-8";

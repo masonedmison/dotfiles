@@ -249,17 +249,17 @@ return {
         settings = {
           nixd = {
             nixpkgs = {
-              expr = 'import (builtins.getFlake "/home/edmisml/dotfiles").inputs.nixpkgs { }   ',
+              expr = 'import (builtins.getFlake "/Users/medmison/dotfiles").inputs.nixpkgs { }   ',
             },
             formatting = {
               command = { 'nixpkgs-fmt' },
             },
             options = {
               home_manager = {
-                expr = '(builtins.getFlake "/home/edmisml/dotfiles").homeConfigurations."edmisml@popos".options',
+                expr = '(builtins.getFlake "/Users/medmison/dotfiles").homeConfigurations."edmisml@popos".options',
               },
               darwin = {
-                expr = '(builtins.getFlake "/home/edmisml/dotfiles").darwinConfigurations.edmisml.options',
+                expr = '(builtins.getFlake "/Users/medmison/dotfiles").darwinConfigurations.edmisml.options',
               },
             },
           },

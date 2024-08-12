@@ -15,7 +15,7 @@
   };
 
   nix = {
-    settings.trusted-users = [ "edmisml" ];
+    settings.trusted-users = [ "medmison" ];
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
