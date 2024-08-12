@@ -3,7 +3,7 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
-vim.o.shell = '/home/edmisml/.nix-profile/bin/fish'
+vim.o.shell = vim.fn.expand '/etc/profiles/per-user/edmisml/bin/fish'
 
 -- Remove to ensure metals user messages are not blocked
 -- see `:help nvim-metals` for more details

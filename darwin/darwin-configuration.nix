@@ -38,7 +38,6 @@
   system.defaults = {
     trackpad.Clicking = true;
     finder.AppleShowAllExtensions = true;
-    finder.ShowStatusBar = true;
     finder.FXEnableExtensionChangeWarning = false;
     finder._FXShowPosixPathInTitle = true;
     finder.CreateDesktop = false;
