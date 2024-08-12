@@ -51,6 +51,7 @@
     NSGlobalDomain.KeyRepeat = 2;
     NSGlobalDomain.AppleInterfaceStyle = "Dark";
     NSGlobalDomain.AppleShowAllFiles = true;
-    system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
+    NSGlobalDomain."com.apple.swipescrolldirection" = false;
+    NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
   };
 }
