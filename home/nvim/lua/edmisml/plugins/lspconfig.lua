@@ -259,7 +259,7 @@ return {
                 expr = '(builtins.getFlake "/Users/medmison/dotfiles").homeConfigurations."edmisml@popos".options',
               },
               darwin = {
-                expr = '(builtins.getFlake "/Users/medmison/dotfiles").darwinConfigurations.edmisml.options',
+                expr = '(builtins.getFlake "/Users/medmison/dotfiles").darwinConfigurations.medmison.options',
               },
             },
           },
