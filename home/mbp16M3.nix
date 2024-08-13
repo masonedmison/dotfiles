@@ -1,5 +1,9 @@
-{ config, ... }: {
+{ pkgs, config, ... }: {
   imports = [ ./common.nix ];
+
+  home.packages = [
+    pkgs.lazydocker
+  ];
 
   # While I'm still new to aerospace I'm going to simply symlink
   # to ~/.config/aerospace for quicker update cycles
