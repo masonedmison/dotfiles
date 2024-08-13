@@ -14,3 +14,7 @@ nix run home-manager/master -- init --switch
 ## TODO
 [] Programatically created systemd service and enable
 [] support both mac linux laptops (64 bit darwin and x86)
+
+## FAQ
+Q: markdown preview fails with "tslib not found" error
+    A: run `npm install` at `~/.local/share/nvim/lazy/markdown-preview.nvim`

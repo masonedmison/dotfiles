@@ -45,6 +45,7 @@ in
       lazygit
       nixd
       nixpkgs-fmt
+      nodejs_22
       obsidian
       p7zip
       pstree
@@ -55,6 +56,8 @@ in
       tokei
       tree
       wget
+      xclip
+      yarn
     ];
   };
 
