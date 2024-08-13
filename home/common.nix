@@ -74,6 +74,20 @@ in
       shellAliases = {
         g = "git";
       };
+      functions = {
+        envsource = {
+          body = ''
+            for line in (cat $argv | grep -v '^#' | grep -v '^\s*$')
+              set item (string split -m 1 '=' $line)
+              set -gx $item[1] $item[2]
+              echo "Exported key $item[1]"
+            end
+          '';
+        };
+        cdnv = {
+          body = "cd $argv; nvim .";
+        };
+      };
     };
     less.enable = true;
     fzf.enable = true;
