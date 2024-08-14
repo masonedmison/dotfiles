@@ -1,6 +1,9 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- unload buffer
+vim.keymap.set('n', '<leader>bu', ':bd <CR>', { desc = '[B]uffer [U]nload' })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -32,7 +35,7 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Open netrw
-vim.keymap.set('n', '<leader>e', ':Lex 30 <cr>')
+vim.keymap.set('n', '<leader>e', ':Lex 20 <cr>')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

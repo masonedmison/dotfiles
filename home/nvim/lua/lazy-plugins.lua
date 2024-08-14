@@ -53,6 +53,8 @@ require('lazy').setup({
   require 'edmisml.plugins.lazygit',
 
   require 'edmisml.plugins.markdown-preview',
+
+  require 'edmisml.plugins.bufferline',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
