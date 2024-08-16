@@ -43,7 +43,9 @@ return {
     -- Example of settings
     metals_config.settings = {
       showImplicitArguments = true,
+      showInferredType = true,
       excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
+      -- testUserInterface = 'Test Explorer',
     }
 
     -- *READ THIS*
@@ -64,15 +66,17 @@ return {
       require('metals').setup_dap()
 
       -- LSP mappings
-      map('n', 'K', vim.lsp.buf.hover)
+      map({ 'n', 'v' }, 'K', vim.lsp.buf.hover)
       map('n', '<leader>cl', vim.lsp.codelens.run)
       map('n', '<leader>csh', vim.lsp.buf.signature_help, { desc = '[C]ode [S]ignature [H]elp' })
       map('n', '<leader>bf', vim.lsp.buf.format, { desc = '[B]uffer [F]ormat' })
       map('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
+      map('n', 'gS', require('metals').goto_super_method, { desc = '[G]oto [S]uper method' })
 
       map('n', '<leader>ws', function()
         require('metals').hover_worksheet()
       end)
+
       --
       -- Example mappings for usage with nvim-dap. If you don't use that, you can
       -- skip these
