@@ -57,6 +57,10 @@ require('lazy').setup({
   require 'edmisml.plugins.trouble',
 
   require 'edmisml.plugins.bufferline',
+
+  require 'edmisml.plugins.code-action-lightbulb',
+
+  require 'edmisml.plugins.lsp-signature',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
