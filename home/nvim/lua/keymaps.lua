@@ -4,6 +4,17 @@
 -- unload buffer
 vim.keymap.set('n', '<leader>bu', ':bd <CR>', { desc = '[B]uffer [U]nload' })
 
+-- close all buffers but the current buffers
+vim.keymap.set('n', '<leader>bc', function()
+  local bufs = vim.api.nvim_list_bufs()
+  local current_buf = vim.api.nvim_get_current_buf()
+  for _, i in ipairs(bufs) do
+    if i ~= current_buf then
+      vim.api.nvim_buf_delete(i, {})
+    end
+  end
+end, { desc = '[B]uffer [Close] all but current' })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')

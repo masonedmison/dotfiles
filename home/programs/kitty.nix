@@ -34,6 +34,7 @@
       # tab shortcuts
       "ctrl+shift+alt+t" = "new_tab";
       "ctrl+shift+alt+q" = "close_tab";
+      "ctrl+shift+alt+m" = "set_tab_title";
     };
   };
 }

@@ -45,7 +45,7 @@ return {
       showImplicitArguments = true,
       showInferredType = true,
       excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
-      -- testUserInterface = 'Test Explorer',
+      testUserInterface = 'Test Explorer',
     }
 
     -- *READ THIS*
@@ -76,6 +76,9 @@ return {
       map('n', '<leader>ws', function()
         require('metals').hover_worksheet()
       end)
+
+      map('n', 'dn', vim.diagnostic.goto_next, { desc = '[D]iagnostic [N]ext' })
+      map('n', 'dp', vim.diagnostic.goto_prev, { desc = '[D]ianostic Previous' })
 
       --
       -- Example mappings for usage with nvim-dap. If you don't use that, you can
