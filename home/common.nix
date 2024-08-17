@@ -32,6 +32,10 @@ in
     };
     stateVersion = "22.11";
 
+    # symlink .editorconfig file to home
+    file.".editorconfig" = {
+      source = ./.editorconfig;
+    };
     packages = with pkgs; [
       bottom
       cargo
