@@ -47,6 +47,7 @@ in
       httpie
       jless
       lazygit
+      lua
       nixd
       nixpkgs-fmt
       nodejs_22
@@ -77,6 +78,9 @@ in
         set -gx'';
       shellAliases = {
         g = "git";
+        od = "cd ~/dotfiles; nvim";
+        lzd = "lazydocker";
+        lzg = "lazygit";
       };
       functions = {
         envsource = {
