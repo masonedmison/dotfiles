@@ -4,16 +4,39 @@
 -- unload buffer
 vim.keymap.set('n', '<leader>bu', ':bd <CR>', { desc = '[B]uffer [U]nload' })
 
--- close all buffers but the current buffers
+-- Close all buffers but the current buffer not including toggleterm buffers.
+-- If the current buffer is a toggleterm terminal, this is a noop.
 vim.keymap.set('n', '<leader>bc', function()
   local bufs = vim.api.nvim_list_bufs()
   local current_buf = vim.api.nvim_get_current_buf()
-  for _, i in ipairs(bufs) do
-    if i ~= current_buf then
-      vim.api.nvim_buf_delete(i, {})
+  -- get buffers that are not toggleterm buffers
+  local function non_toggterm(bufs)
+    local non_toggterms = {}
+    local toggterm_curr = false
+    for _, bi in ipairs(bufs) do
+      local bufname = vim.api.nvim_buf_get_name(bi)
+      local maybe_togg_term = string.find(bufname, 'toggleterm')
+      if not maybe_togg_term then
+        table.insert(non_toggterms, bi)
+      elseif maybe_togg_term and bi == current_buf then
+        toggterm_curr = true
+        break
+      end
+    end
+
+    return toggterm_curr, non_toggterms
+  end
+  local curr_is_term, filtered_buffs = non_toggterm(bufs)
+  if curr_is_term then
+    print 'Current buffer is a terminal!'
+  else
+    for _, i in ipairs(filtered_buffs) do
+      if i ~= current_buf then
+        vim.api.nvim_buf_delete(i, {})
+      end
     end
   end
-end, { desc = '[B]uffer [Close] all but current' })
+end, { desc = '[B]uffer [C]lose all but current' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
