@@ -14,6 +14,20 @@ return {
         -- Debug settings if you're using nvim-dap
         local dap = require 'dap'
 
+        vim.fn.sign_define('DapBreakpoint', { text = '🛑', texthl = '', linehl = '', numhl = '' })
+        vim.fn.sign_define('DapStopped', { text = '', texthl = '', linehl = '', numhl = '' })
+
+        vim.api.nvim_create_autocmd('FileType', {
+          pattern = 'dap-repl',
+          callback = function()
+            require('dap.ext.autocompl').attach()
+          end,
+        })
+
+        vim.api.nvim_create_user_command('DebugStop', function()
+          dap.terminate()
+        end, {})
+
         dap.configurations.scala = {
           {
             type = 'scala',
@@ -45,7 +59,7 @@ return {
       showImplicitArguments = true,
       showInferredType = true,
       excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
-      testUserInterface = 'Test Explorer',
+      -- testUserInterface = 'Test Explorer',
     }
 
     -- *READ THIS*
@@ -67,7 +81,7 @@ return {
 
       -- LSP mappings
       map({ 'n', 'v' }, 'K', vim.lsp.buf.hover)
-      map('n', '<leader>cl', vim.lsp.codelens.run)
+      map('n', '<leader>cl', vim.lsp.codelens.run, { desc = '[C]ode [L]ens' })
       map('n', '<leader>csh', vim.lsp.buf.signature_help, { desc = '[C]ode [S]ignature [H]elp' })
       map('n', '<leader>bf', vim.lsp.buf.format, { desc = '[B]uffer [F]ormat' })
       map('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
@@ -77,41 +91,57 @@ return {
         require('metals').hover_worksheet()
       end)
 
-      map('n', 'dn', vim.diagnostic.goto_next, { desc = '[D]iagnostic [N]ext' })
-      map('n', 'dp', vim.diagnostic.goto_prev, { desc = '[D]ianostic Previous' })
+      -- Dap mappings
 
-      --
-      -- Example mappings for usage with nvim-dap. If you don't use that, you can
-      -- skip these
-      -- TODO: uncomment these once I have DAP setup...
+      map('n', '<leader>dc', function()
+        require('dap').continue()
+      end, { desc = '[D]ebug [C]ontinue' })
 
-      -- map('n', '<leader>dc', function()
-      --   require('dap').continue()
-      -- end)
-      --
-      -- map('n', '<leader>dr', function()
-      --   require('dap').repl.toggle()
-      -- end)
-      --
-      -- map('n', '<leader>dK', function()
-      --   require('dap.ui.widgets').hover()
-      -- end)
-      --
-      -- map('n', '<leader>dt', function()
-      --   require('dap').toggle_breakpoint()
-      -- end)
-      --
-      -- map('n', '<leader>dso', function()
-      --   require('dap').step_over()
-      -- end)
-      --
-      -- map('n', '<leader>dsi', function()
-      --   require('dap').step_into()
-      -- end)
-      --
-      -- map('n', '<leader>dl', function()
-      --   require('dap').run_last()
-      -- end)
+      map('n', '<leader>dr', function()
+        require('dap').repl.toggle()
+      end, { desc = '[D]ebug [R]epl toggle' })
+
+      map('n', '<leader>dK', function()
+        require('dap.ui.widgets').hover()
+      end, { desc = '[D]ebug Hover [K]' })
+
+      map('n', '<leader>dt', function()
+        require('dap').toggle_breakpoint()
+      end, { desc = '[D]ebug [T]oggle Breakpoint' })
+
+      map('n', '<leader>deo', function()
+        require('dap').step_over()
+      end, { desc = '[D]ebug [E]xecute [O]ver' })
+
+      map('n', '<leader>dei', function()
+        require('dap').step_into()
+      end, { desc = '[D]ebug [E]xecute [I]nto' })
+
+      map('n', '<leader>deu', function()
+        require('dap').step_into()
+      end, { desc = '[D]ebug [E]xecute o[U]t' })
+
+      map('n', '<leader>dl', function()
+        require('dap').run_last()
+      end, { desc = '[D]ebug Run [L]ast' })
+
+      map('n', '<leader>db', function()
+        require('dap').list_breakpoints(true)
+      end, { desc = '[D]ebug [B]reakpoints' })
+
+      map({ 'n', 'v' }, '<Leader>dp', function()
+        require('dap.ui.widgets').preview()
+      end, { desc = '[D]ebug [P]review' })
+
+      map('n', '<Leader>df', function()
+        local widgets = require 'dap.ui.widgets'
+        widgets.centered_float(widgets.frames)
+      end, { desc = '[D]ebug [F]rames' })
+
+      map('n', '<Leader>dS', function()
+        local widgets = require 'dap.ui.widgets'
+        widgets.centered_float(widgets.scopes)
+      end, { desc = '[D]ebug [S]copes' })
     end
 
     return metals_config
