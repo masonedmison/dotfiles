@@ -1,5 +1,9 @@
 { ... }:
 {
+  homebrew.brews = [
+    "docker-credential-helper"
+  ];
+
   homebrew.casks =
     [
       "discord"
@@ -8,6 +12,7 @@
       "nikitabobko/tap/aerospace"
       "postico"
       "raycast"
+      "postman"
       "spotify"
     ];
 }
