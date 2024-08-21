@@ -18,6 +18,11 @@ return {
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
+      -- use treesitter for folding goodness
+      vim.opt.foldmethod = 'expr'
+      -- NOTE: I could also use LSP as the source of truth...
+      vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup(opts)
 

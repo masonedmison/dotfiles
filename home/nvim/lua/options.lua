@@ -68,4 +68,15 @@ vim.opt.scrolloff = 10
 -- Set relative line number for jumpy goodness
 vim.opt.relativenumber = true
 
+-- Folding options
+-- Syntax highlighting first line of the fold
+vim.opt.foldtext = ''
+-- Set this to a high number to prevent folds
+-- from automatically closing
+vim.opt.foldlevel = 99
+-- Play around with this... it sets which folds
+-- will automatically be closed when opening up
+-- a new buffer
+vim.opt.foldlevelstart = -1
+
 -- vim: ts=2 sts=2 sw=2 et
