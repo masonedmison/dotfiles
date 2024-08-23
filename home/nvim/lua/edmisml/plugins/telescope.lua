@@ -62,6 +62,10 @@ return {
         --   },
         -- },
         -- pickers = {}
+        defaults = {
+          layout_strategy = 'center',
+          path_display = { 'smart' },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
