@@ -52,7 +52,7 @@ require('lazy').setup({
 
   require 'edmisml.plugins.lazygit',
 
-  -- require 'edmisml.plugins.markdown-preview',
+  require 'edmisml.plugins.markdown-preview',
 
   require 'edmisml.plugins.trouble',
 
