@@ -78,7 +78,7 @@ in
         set -gx'';
       shellAliases = {
         g = "git";
-        od = "cd ~/dotfiles; nvim";
+        dt = "cd ~/dotfiles; nvim";
         lzd = "lazydocker";
         lzg = "lazygit";
       };
