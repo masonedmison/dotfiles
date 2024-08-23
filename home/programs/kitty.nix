@@ -25,7 +25,7 @@
     keybindings = {
       "ctrl+shift+alt+l" = "next_layout";
       # window shortcuts
-      "ctrl+shift+alt+n" = "new_window";
+      "ctrl+shift+alt+n" = "launch --cwd=current";
       "ctrl+shift+alt+k" = "next_window";
       "ctrl+shift+alt+j" = "previous_window";
       "ctrl+shift+alt+w" = "close_window";
@@ -34,7 +34,10 @@
       # tab shortcuts
       "ctrl+shift+alt+t" = "new_tab";
       "ctrl+shift+alt+q" = "close_tab";
-      "ctrl+shift+alt+m" = "set_tab_title";
+      "ctrl+shift+alt+s" = "set_tab_title";
+      "ctrl+shift+alt+m" = "previous_tab";
+      "ctrl+shift+alt+<" = "next_tab";
+
     };
   };
 }
