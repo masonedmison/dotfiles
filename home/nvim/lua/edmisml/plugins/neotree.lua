@@ -8,7 +8,8 @@ return {
   },
   config = function()
     -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-    vim.keymap.set('n', '<leader>e', ':Neotree <CR>', { desc = '[E]xplore' })
+    vim.keymap.set('n', '<leader>nr', ':Neotree reveal <CR>', { desc = '[N]eotree [R]eveal' })
+    vim.keymap.set('n', '<leader>ng', ':Neotree git_status <CR>', { desc = '[N]eotree reveal [G]it Status' })
 
     require('neo-tree').setup {
       close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab

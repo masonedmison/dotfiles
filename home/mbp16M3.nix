@@ -16,6 +16,7 @@
     mdmwm = "cd ~/mdm/worktrees/mdm";
     mdmwco = "cd ~/mdm/worktrees/mdco";
     mdmwca = "cd ~/mdm/worktrees/mdca";
+    mdmwu = "cd ~/mdm/worktrees/mdu";
 
     drb = "darwin-rebuild switch --flake ~/dotfiles/#medmison";
   };

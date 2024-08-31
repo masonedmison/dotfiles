@@ -21,6 +21,7 @@
       enabled_layouts = "tall:bias=50;full_size=1;mirrored=false,*";
       # disable blinky cursor
       cursor_blink_interval = 0;
+      allow_remote_control = "yes";
     };
     keybindings = {
       "ctrl+shift+alt+l" = "next_layout";

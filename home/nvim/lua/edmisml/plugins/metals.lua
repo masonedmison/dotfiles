@@ -1,7 +1,8 @@
 local map = vim.keymap.set
 
 return {
-  'scalameta/nvim-metals',
+  -- 'scalameta/nvim-metals',
+  dir = '~/programming/lua/nvim-metals',
   dependencies = {
     'nvim-lua/plenary.nvim',
     {
@@ -35,6 +36,7 @@ return {
             name = 'RunOrTest',
             metals = {
               runType = 'runOrTestFile',
+              env = { FOO = 'BAR' },
               --args = { "firstArg", "secondArg", "thirdArg" }, -- here just as an example
             },
           },
