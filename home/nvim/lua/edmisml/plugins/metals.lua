@@ -1,8 +1,7 @@
 local map = vim.keymap.set
 
 return {
-  -- 'scalameta/nvim-metals',
-  dir = '~/programming/lua/nvim-metals',
+  'scalameta/nvim-metals',
   dependencies = {
     'nvim-lua/plenary.nvim',
     {
