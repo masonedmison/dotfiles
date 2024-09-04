@@ -30,6 +30,7 @@
       "**/.DS_Store"
       "**/.history/"
       "**/.vscode/"
+      "notes.md"
     ];
 
     extraConfig = {
