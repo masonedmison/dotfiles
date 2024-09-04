@@ -98,51 +98,33 @@ return {
         require('dap').continue()
       end, { desc = '[D]ebug [C]ontinue' })
 
-      map('n', '<leader>dr', function()
-        require('dap').repl.toggle()
-      end, { desc = '[D]ebug [R]epl toggle' })
-
       map('n', '<leader>dK', function()
         require('dap.ui.widgets').hover()
       end, { desc = '[D]ebug Hover [K]' })
 
-      map('n', '<leader>dt', function()
+      map('n', '<leader>db', function()
         require('dap').toggle_breakpoint()
       end, { desc = '[D]ebug [T]oggle Breakpoint' })
 
-      map('n', '<leader>deo', function()
+      map('n', '<leader>dv', function()
         require('dap').step_over()
-      end, { desc = '[D]ebug [E]xecute [O]ver' })
+      end, { desc = '[D]ebug Execute O[v]er' })
 
-      map('n', '<leader>dei', function()
+      map('n', '<leader>di', function()
         require('dap').step_into()
-      end, { desc = '[D]ebug [E]xecute [I]nto' })
+      end, { desc = '[D]ebug Execute [I]nto' })
 
-      map('n', '<leader>deu', function()
-        require('dap').step_into()
-      end, { desc = '[D]ebug [E]xecute o[U]t' })
+      map('n', '<leader>du', function()
+        require('dap').step_out()
+      end, { desc = '[D]ebug Execute o[U]t' })
 
       map('n', '<leader>dl', function()
         require('dap').run_last()
       end, { desc = '[D]ebug Run [L]ast' })
 
-      map('n', '<leader>db', function()
-        require('dap').list_breakpoints(true)
-      end, { desc = '[D]ebug [B]reakpoints' })
-
       map({ 'n', 'v' }, '<Leader>dp', function()
         require('dap.ui.widgets').preview()
       end, { desc = '[D]ebug [P]review' })
-
-      map('n', '<Leader>df', function()
-        local widgets = require 'dap.ui.widgets'
-        widgets.centered_float(widgets.frames)
-      end, { desc = '[D]ebug [F]rames' })
-
-      map('n', '<Leader>dS', function()
-        local widgets = require 'dap.ui.widgets'
-        widgets.centered_float(widgets.scopes)
-      end, { desc = '[D]ebug [S]copes' })
     end
 
     return metals_config

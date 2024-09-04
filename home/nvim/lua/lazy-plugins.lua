@@ -63,6 +63,8 @@ require('lazy').setup({
   require 'edmisml.plugins.lsp-signature',
 
   require 'edmisml.plugins.neotree',
+
+  require 'edmisml.plugins.nvim-dap-ui',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
