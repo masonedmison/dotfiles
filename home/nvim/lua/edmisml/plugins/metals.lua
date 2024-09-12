@@ -125,6 +125,10 @@ return {
       map({ 'n', 'v' }, '<Leader>dp', function()
         require('dap.ui.widgets').preview()
       end, { desc = '[D]ebug [P]review' })
+
+      map({ 'n', 'v' }, '<Leader>de', function()
+        require('dap').set_exception_breakpoints()
+      end, { desc = '[D]ebug [E]xception Breakpoint' })
     end
 
     return metals_config
