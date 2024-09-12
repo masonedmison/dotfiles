@@ -183,6 +183,15 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        yamlls = {
+          settings = {
+            yaml = {
+              schemas = {
+                ['https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json'] = '/*.k8s.yaml',
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
