@@ -38,6 +38,7 @@
       init.defaultBranch = "main";
       rerere.enabled = true;
       core.editor = "nvim";
+      push.autoSetupRemote = true;
     };
   };
 }
