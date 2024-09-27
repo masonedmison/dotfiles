@@ -131,6 +131,9 @@ return {
         })
       end, { desc = '[/] Fuzzily search in current buffer' })
 
+      -- open MENOTE's in Telescope
+      vim.keymap.set('n', '<leader>on', '<cmd>TodoTelescope keywords=MENOTE<CR>', { desc = '[O]pen [N]otes' })
+
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
       vim.keymap.set('n', '<leader>s/', function()
