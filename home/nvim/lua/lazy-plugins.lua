@@ -67,6 +67,8 @@ require('lazy').setup({
   require 'edmisml.plugins.nvim-dap-ui',
 
   require 'edmisml.plugins.typescript-tools',
+
+  require 'edmisml.plugins.oil',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
