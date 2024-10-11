@@ -2,6 +2,7 @@
   imports = [ ./common.nix ];
 
   home.packages = [
+    pkgs.helmfile
     pkgs.lazydocker
   ];
 
