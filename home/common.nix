@@ -38,7 +38,6 @@ in
     };
     packages = with pkgs; [
       bottom
-      cargo
       coursier
       curl
       duf
@@ -57,6 +56,7 @@ in
       python3
       ranger
       ripgrep
+      rustup
       tldr
       tokei
       tree

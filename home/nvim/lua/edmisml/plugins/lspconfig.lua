@@ -211,6 +211,7 @@ return {
         terraformls = {},
         helm_ls = {},
         gitlab_ci_ls = {},
+        rust_analyzer = {},
       }
 
       -- Ensure the servers and tools above are installed
