@@ -37,6 +37,7 @@
       "ctrl+shift+alt+s" = "set_tab_title";
       "ctrl+shift+alt+m" = "previous_tab";
       "ctrl+shift+alt+<" = "next_tab";
+      "ctrl+shift+alt+d" = "detach_tab";
 
     };
     extraConfig = ''
