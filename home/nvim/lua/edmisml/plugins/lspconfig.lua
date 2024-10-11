@@ -184,6 +184,7 @@ return {
         -- tsserver = {},
         --
         yamlls = {
+          filetypes = { 'yaml', 'yaml.docker-compose' },
           settings = {
             yaml = {
               schemas = {
@@ -207,6 +208,9 @@ return {
             },
           },
         },
+        terraformls = {},
+        helm_ls = {},
+        gitlab_ci_ls = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -220,6 +224,8 @@ return {
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
+      -- Add Language servers here which we do not want to set up
+      -- using Mason
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'jdtls',
@@ -238,6 +244,16 @@ return {
           end,
         },
       }
+
+      -- Autocmds to setup file types so that they are correctly picked up
+      -- by Language Server
+      -- for gitlab-ls
+      vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+        pattern = '*.gitlab-ci*.{yml,yaml}',
+        callback = function()
+          vim.bo.filetype = 'yaml.gitlab'
+        end,
+      })
 
       -- Non-supported Mason servers here...
       local on_attach = function(bufnr)
