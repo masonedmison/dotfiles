@@ -209,7 +209,11 @@ return {
           },
         },
         terraformls = {},
-        helm_ls = {},
+        helm_ls = {
+          yamlls = {
+            path = 'yaml-language-server',
+          },
+        },
         gitlab_ci_ls = {},
         rust_analyzer = {},
       }

@@ -71,6 +71,8 @@ require('lazy').setup({
   require 'edmisml.plugins.oil',
 
   require 'edmisml.plugins.java',
+
+  require 'edmisml.plugins.vim-helm',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

@@ -3,6 +3,7 @@
 
   home.packages = [
     pkgs.helmfile
+    pkgs.kubernetes-helm
     pkgs.lazydocker
   ];
 
