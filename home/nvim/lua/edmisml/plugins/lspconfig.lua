@@ -183,6 +183,7 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        clangd = {},
         yamlls = {
           filetypes = { 'yaml', 'yaml.docker-compose' },
           settings = {
@@ -193,7 +194,7 @@ return {
             },
           },
         },
-
+        pyright = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
