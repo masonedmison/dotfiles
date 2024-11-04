@@ -7,8 +7,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixGL = {
-      url = "github:nix-community/nixGL/310f8e49a149e4c9ea52f1adf70cdc768ec53f8a";
+    nixgl = {
+      url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     firefox-addons = {
@@ -26,7 +26,11 @@
     let
       mkHm = modules: system: extraArgs: home-manager.lib.homeManagerConfiguration {
         inherit modules;
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs =
+          import nixpkgs {
+            inherit system;
+            overlays = [ inputs.nixgl.overlay ];
+          };
         extraSpecialArgs = extraArgs;
       };
 

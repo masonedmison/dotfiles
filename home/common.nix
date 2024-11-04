@@ -1,16 +1,8 @@
 { pkgs, inputs, stdenv, ... }:
 
-let
-  nixGLIntel = inputs.nixGL.packages."${pkgs.system}".nixGLIntel;
-in
 {
-  nixGL.prefix = "${nixGLIntel}/bin/nixGLIntel";
 
   imports = [
-    (builtins.fetchurl {
-      url = "https://raw.githubusercontent.com/Smona/home-manager/nixgl-compat/modules/misc/nixgl.nix";
-      sha256 = "01dkfr9wq3ib5hlyq9zq662mp0jl42fw3f6gd2qgdf8l8ia78j7i";
-    })
     ./fonts
     ./programs/vscode
     ./programs/git.nix
@@ -19,6 +11,10 @@ in
     ./programs/starship.nix
   ];
 
+  nixGL = {
+    packages = inputs.nixgl.packages;
+    defaultWrapper = "mesa";
+  };
 
   home = {
     username = "medmison";
