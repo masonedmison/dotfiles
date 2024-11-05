@@ -54,4 +54,6 @@
     NSGlobalDomain."com.apple.swipescrolldirection" = false;
     NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
   };
+
+  ids.uids.nixbld = 300;
 }
