@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     shellIntegration.enableFishIntegration = true;
-    theme = "Space Gray Eighties";
+    themeFile = "SpaceGray_Eighties";
     font = {
       name = "JetBrains Mono";
       size =
