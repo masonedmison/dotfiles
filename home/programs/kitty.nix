@@ -26,8 +26,6 @@
       "ctrl+shift+alt+l" = "next_layout";
       # window shortcuts
       "ctrl+shift+alt+n" = "launch --cwd=current";
-      "ctrl+shift+alt+k" = "next_window";
-      "ctrl+shift+alt+j" = "previous_window";
       "ctrl+shift+alt+w" = "close_window";
       "ctrl+shift+alt+r" = "start_resizing_window";
 
@@ -35,8 +33,8 @@
       "ctrl+shift+alt+t" = "new_tab";
       "ctrl+shift+alt+q" = "close_tab";
       "ctrl+shift+alt+s" = "set_tab_title";
-      "ctrl+shift+alt+m" = "previous_tab";
-      "ctrl+shift+alt+<" = "next_tab";
+      "ctrl+shift+alt+j" = "previous_tab";
+      "ctrl+shift+alt+k" = "next_tab";
       "ctrl+shift+alt+d" = "detach_tab";
 
     };
