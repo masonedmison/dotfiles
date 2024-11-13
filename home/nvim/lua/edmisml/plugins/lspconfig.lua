@@ -217,6 +217,7 @@ return {
         },
         gitlab_ci_ls = {},
         rust_analyzer = {},
+        jsonls = {},
       }
 
       -- Ensure the servers and tools above are installed
