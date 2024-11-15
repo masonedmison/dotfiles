@@ -34,7 +34,7 @@ require('lazy').setup({
 
   require 'edmisml/plugins/cmp',
 
-  require 'edmisml/plugins/tokyonight',
+  require 'edmisml/plugins/nightfox',
 
   require 'edmisml/plugins/todo-comments',
 
