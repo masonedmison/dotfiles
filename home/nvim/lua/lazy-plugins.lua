@@ -21,58 +21,32 @@ require('lazy').setup({
 
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
-
-  require 'edmisml/plugins/gitsigns',
-
-  require 'edmisml/plugins/which-key',
-
-  require 'edmisml/plugins/telescope',
-
-  require 'edmisml/plugins/lspconfig',
-
-  require 'edmisml/plugins/conform',
-
-  require 'edmisml/plugins/cmp',
-
-  require 'edmisml/plugins/nightfox',
-
-  require 'edmisml/plugins/todo-comments',
-
-  require 'edmisml/plugins/mini',
-
-  require 'edmisml/plugins/treesitter',
-
   require 'edmisml.plugins.autopairs',
-
-  require 'edmisml.plugins.toggleterm',
-
-  require 'edmisml.plugins.toggleterm-manager',
-
-  require 'edmisml.plugins.metals',
-
-  require 'edmisml.plugins.lazygit',
-
-  require 'edmisml.plugins.markdown-preview',
-
-  require 'edmisml.plugins.trouble',
-
   require 'edmisml.plugins.bufferline',
-
+  require 'edmisml.plugins.cmp',
   require 'edmisml.plugins.code-action-lightbulb',
-
-  require 'edmisml.plugins.lsp-signature',
-
-  require 'edmisml.plugins.neotree',
-
-  require 'edmisml.plugins.nvim-dap-ui',
-
-  require 'edmisml.plugins.typescript-tools',
-
-  require 'edmisml.plugins.oil',
-
+  require 'edmisml.plugins.conform',
+  require 'edmisml.plugins.gitsigns',
   require 'edmisml.plugins.java',
-
+  require 'edmisml.plugins.lazygit',
+  require 'edmisml.plugins.lsp-signature',
+  require 'edmisml.plugins.lspconfig',
+  require 'edmisml.plugins.markdown-preview',
+  require 'edmisml.plugins.metals',
+  require 'edmisml.plugins.mini',
+  require 'edmisml.plugins.neotree',
+  require 'edmisml.plugins.nightfox',
+  require 'edmisml.plugins.nvim-dap-ui',
+  require 'edmisml.plugins.oil',
+  require 'edmisml.plugins.telescope',
+  require 'edmisml.plugins.todo-comments',
+  require 'edmisml.plugins.toggleterm',
+  require 'edmisml.plugins.toggleterm-manager',
+  require 'edmisml.plugins.treesitter',
+  require 'edmisml.plugins.trouble',
+  require 'edmisml.plugins.typescript-tools',
   require 'edmisml.plugins.vim-helm',
+  require 'edmisml.plugins.which-key',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
