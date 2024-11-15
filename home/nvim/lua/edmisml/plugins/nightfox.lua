@@ -9,6 +9,7 @@ return {
       options = {
         styles = {
           keywords = 'italic,bold',
+          comments = 'italic',
         },
       },
     }
