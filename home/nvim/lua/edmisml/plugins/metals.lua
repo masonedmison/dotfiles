@@ -32,11 +32,23 @@ return {
           {
             type = 'scala',
             request = 'launch',
-            name = 'RunOrTest',
+            name = 'DefaultRunOrTest',
             metals = {
               runType = 'runOrTestFile',
-              env = { FOO = 'BAR' },
-              --args = { "firstArg", "secondArg", "thirdArg" }, -- here just as an example
+            },
+          },
+          {
+            type = 'scala',
+            request = 'launch',
+            name = 'WorkRunOrTest',
+            metals = {
+              runType = 'runOrTestFile',
+              env = {
+                KAFKA_SERVERS = 'http://127.0.0.1:9092',
+                SCHEMA_REGISTRY_URL = 'http://127.0.0.1:8081',
+                DYNAMO_URL = 'http://127.0.0.1:8000',
+                S3_URL = 'http://127.0.0.1:4566',
+              },
             },
           },
           {
