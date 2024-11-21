@@ -37,6 +37,7 @@ require('lazy').setup({
   require 'edmisml.plugins.neotree',
   require 'edmisml.plugins.nightfox',
   require 'edmisml.plugins.nvim-dap-ui',
+  require 'edmisml.plugins.obsidian',
   require 'edmisml.plugins.oil',
   require 'edmisml.plugins.telescope',
   require 'edmisml.plugins.todo-comments',

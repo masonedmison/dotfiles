@@ -21,6 +21,9 @@ vim.opt.showmode = false
 -- Don't store swap files
 vim.opt.swapfile = false
 
+-- This is needed for obsidian
+vim.opt.conceallevel = 1
+
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.

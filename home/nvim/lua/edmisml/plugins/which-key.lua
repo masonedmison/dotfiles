@@ -25,6 +25,7 @@ return {
         { '<leader>c', group = '[C]ode' },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>l', group = '[L]azy' },
+        { '<leader>o', group = '[O]bsidian' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
