@@ -24,18 +24,18 @@
 
   outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs:
     let
-      mkHm = modules: system: extraArgs: home-manager.lib.homeManagerConfiguration {
+      mkHm = modules: userConfig: extraArgs: home-manager.lib.homeManagerConfiguration {
         inherit modules;
         pkgs =
           import nixpkgs {
-            inherit system;
+            system = userConfig.architecture;
             overlays = [ inputs.nixgl.overlay ];
           };
-        extraSpecialArgs = extraArgs;
+        extraSpecialArgs = extraArgs // { inherit userConfig; };
       };
 
-      mkDarwin = { extraModules ? [ ], extraArgs ? { }, extraHmModules ? [ ] }: darwin.lib.darwinSystem {
-        system = "aarch64-linux";
+      mkDarwin = { userConfig, extraModules ? [ ], extraArgs ? { }, extraHmModules ? [ ] }: darwin.lib.darwinSystem {
+        system = userConfig.architecture;
         specialArgs = { inherit self; };
         modules =
           [
@@ -45,25 +45,28 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                # TODO take "machine" as input parameter
-                users.medmison = {
+                users.${userConfig.username} = {
                   imports = extraHmModules;
                 };
-                extraSpecialArgs = { inherit inputs; };
+                extraSpecialArgs = extraArgs // {
+                  inherit userConfig;
+                };
               };
             }
           ] ++ extraModules;
       };
 
+      systems = import ./systems.nix;
+
     in
     {
       darwinConfigurations = {
-        edmisml = mkDarwin { extraModules = [ ./darwin/common.nix ]; extraHmModules = [ ./home/mbp16.nix ]; };
-        medmison = mkDarwin { extraModules = [ ./darwin/common.nix ]; extraHmModules = [ ./home/mbp16M3.nix ]; };
+        edmisml = mkDarwin { userConfig = systems.mbp13.userConfig; extraArgs = { inherit inputs; }; extraModules = [ ./darwin/common.nix ]; extraHmModules = [ ./home/mbp16.nix ]; };
+        medmison = mkDarwin { userConfig = systems.workmac.userConfig; extraArgs = { inherit inputs; }; extraModules = [ ./darwin/common.nix ]; extraHmModules = [ ./home/mbp16M3.nix ]; };
       };
       homeConfigurations = {
         "edmisml@popos" =
-          mkHm [ ./home/s76.nix ] "x86_64-linux" { inherit inputs; };
+          mkHm [ ./home/s76.nix ] systems.s76.userConfig { inherit inputs; };
       };
     };
 }

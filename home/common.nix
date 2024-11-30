@@ -1,4 +1,4 @@
-{ pkgs, inputs, stdenv, ... }:
+{ pkgs, inputs, userConfig, stdenv, ... }:
 
 {
 
@@ -17,10 +17,9 @@
   };
 
   home = {
-    username = "medmison";
+    username = userConfig.username;
     homeDirectory = pkgs.lib.mkForce (
-      if pkgs.stdenv.isLinux then "/home/edmisml"
-      else "/Users/medmison"
+      userConfig.userDir
     );
     sessionVariables = {
       LANG = "en_US.UTF-8";
