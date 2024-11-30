@@ -14,5 +14,9 @@
   home.file.".config/kmonad" = {
     source = ./kmonad/config.kbd;
   };
+
+  programs.fish.shellAliases = {
+    hms = "home-manager switch --flake ~/dotfiles/#edmisml@popos";
+  };
 }
 
