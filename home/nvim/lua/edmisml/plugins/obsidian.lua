@@ -64,6 +64,12 @@ return {
         end,
         opts = { buffer = true },
       },
+      ['<leader>od'] = {
+        action = function()
+          vim.cmd 'ObsidianDailies'
+        end,
+        opts = { buffer = true },
+      },
     },
     -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
     -- URL it will be ignored but you can customize this behavior here.
