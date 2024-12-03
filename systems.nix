@@ -4,6 +4,11 @@
       username = "edmisml";
       userDir = "/home/edmisml";
       architecture = "x86_64-linux";
+      obsidian = {
+        vaultPath = "/home/edmisml/vaults/personal";
+        vaultName = "personal";
+      };
+      fishPath = "/home/edmisml/.nix-profile/bin/fish";
     };
   };
   workmac = {
@@ -11,6 +16,11 @@
       username = "medmison";
       userDir = "/Users/medmison";
       architecture = "aarch64-linux";
+      obsidian = {
+        vaultPath = "/Users/medmison/vaults/mdm";
+        vaultName = "mdm";
+      };
+      fishPath = "/etc/profiles/per-user/medmison/bin/fish";
     };
   };
   mbp13 = {

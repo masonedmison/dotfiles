@@ -24,6 +24,9 @@
     sessionVariables = {
       LANG = "en_US.UTF-8";
       EDITOR = "nvim";
+      VAULT_PATH = userConfig.obsidian.vaultPath;
+      VAULT_NAME = userConfig.obsidian.vaultName;
+      FISH_PATH = userConfig.fishPath;
     };
     stateVersion = "22.11";
 

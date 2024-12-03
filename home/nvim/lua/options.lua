@@ -3,7 +3,7 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
-vim.o.shell = vim.fn.expand '/etc/profiles/per-user/medmison/bin/fish'
+vim.o.shell = os.getenv 'FISH_PATH'
 
 -- Remove to ensure metals user messages are not blocked
 -- see `:help nvim-metals` for more details
