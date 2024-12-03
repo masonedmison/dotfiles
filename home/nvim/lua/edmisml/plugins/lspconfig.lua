@@ -279,6 +279,7 @@ return {
           end,
         })
       end
+      local dotfile_loc = os.getenv 'HOME' .. '/dotfiles'
       -- Set up Nixd
       require('lspconfig').nixd.setup {
         -- do we need this?
@@ -287,17 +288,17 @@ return {
         settings = {
           nixd = {
             nixpkgs = {
-              expr = 'import (builtins.getFlake "/Users/medmison/dotfiles").inputs.nixpkgs { }   ',
+              expr = 'import (builtins.getFlake "' .. dotfile_loc .. '").inputs.nixpkgs { }',
             },
             formatting = {
               command = { 'nixpkgs-fmt' },
             },
             options = {
               home_manager = {
-                expr = '(builtins.getFlake "/Users/medmison/dotfiles").homeConfigurations."edmisml@popos".options',
+                expr = '(builtins.getFlake "' .. dotfile_loc .. '").homeConfigurations."edmisml@popos".options',
               },
               darwin = {
-                expr = '(builtins.getFlake "/Users/medmison/dotfiles").darwinConfigurations.medmison.options',
+                expr = '(builtins.getFlake "' .. dotfile_loc .. '").darwinConfigurations.medmison.options',
               },
             },
           },
