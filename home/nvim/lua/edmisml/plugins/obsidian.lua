@@ -70,6 +70,12 @@ return {
         end,
         opts = { buffer = true },
       },
+      ['<leader>ox'] = {
+        action = function()
+          vim.cmd 'ObsidianToggleCheckbox'
+        end,
+        opts = { buffer = true },
+      },
     },
     -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
     -- URL it will be ignored but you can customize this behavior here.
