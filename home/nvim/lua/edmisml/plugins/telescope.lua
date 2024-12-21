@@ -135,7 +135,7 @@ return {
       vim.keymap.set('n', '<leader>on', '<cmd>TodoTelescope keywords=MENOTE<CR>', { desc = '[O]pen [N]otes' })
       --
       -- open Todos in Telescope
-      vim.keymap.set('n', '<leader>on', '<cmd>TodoTelescope keywords=METODO<CR>', { desc = '[O]pen [T]odos' })
+      vim.keymap.set('n', '<leader>ot', '<cmd>TodoTelescope keywords=METODO<CR>', { desc = '[O]pen [T]odos' })
 
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
