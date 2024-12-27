@@ -43,6 +43,7 @@
       graphviz
       httpie
       jless
+      lazydocker
       lazygit
       lua
       nixd
