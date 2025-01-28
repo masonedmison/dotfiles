@@ -22,7 +22,7 @@ return {
 
       -- Document existing key chains
       require('which-key').add {
-        { '<leader>c', group = '[C]ode' },
+        { '<leader>c', group = '[C]ode/[C]odeCompanion' },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>l', group = '[L]azy' },
         { '<leader>o', group = '[O]bsidian' },
