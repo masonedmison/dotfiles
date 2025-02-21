@@ -3,6 +3,7 @@
 
   home.packages = [
     pkgs.helmfile
+    pkgs.kubectl
     pkgs.kubernetes-helm
   ];
 
