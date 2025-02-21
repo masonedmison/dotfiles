@@ -25,6 +25,14 @@ return {
         adapter = 'anthropic',
       },
     },
+    display = {
+      chat = {
+        show_references = true, -- Show references (from slash commands and variables) in the chat buffer?
+        show_settings = true, -- Show LLM settings at the top of the chat buffer?
+        show_token_count = true, -- Show the token count for each response?
+        start_in_insert_mode = false, -- Open the chat buffer in insert mode?
+      },
+    },
   },
   keys = {
     {
@@ -50,6 +58,14 @@ return {
       noremap = true,
       silent = true,
       desc = '[C]odeCompanion a[C]tions',
+    },
+    {
+      '<leader>cn',
+      '<cmd>CodeCompanionChat<cr>',
+      mode = { 'n', 'v' },
+      noremap = true,
+      silent = true,
+      desc = '[C]odeCompanionChat [N]ew',
     },
   },
 }
