@@ -29,6 +29,7 @@ require('lazy').setup({
   require 'edmisml.plugins.conform',
   require 'edmisml.plugins.gitsigns',
   require 'edmisml.plugins.java',
+  require 'edmisml.plugins.harpoon',
   require 'edmisml.plugins.lazygit',
   require 'edmisml.plugins.lsp-signature',
   require 'edmisml.plugins.lspconfig',
