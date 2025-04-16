@@ -28,6 +28,8 @@
       "ctrl+shift+alt+n" = "launch --cwd=current";
       "ctrl+shift+alt+w" = "close_window";
       "ctrl+shift+alt+r" = "start_resizing_window";
+      "ctrl+shift+alt+u" = "previous_window";
+      "ctrl+shift+alt+i" = "next_window";
 
       # tab shortcuts
       "ctrl+shift+alt+t" = "new_tab";
