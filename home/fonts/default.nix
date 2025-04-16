@@ -1,8 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   home.packages = [
     pkgs.fira-code
-    pkgs.nerdfonts
-  ];
+  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   fonts.fontconfig.enable = true;
 }

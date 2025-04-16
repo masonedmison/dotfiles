@@ -1,6 +1,5 @@
 { pkgs, ... }@inputs:
 {
-  services.nix-daemon.enable = true;
 
   # It seems like this is needed even though I don't use zsh?
   programs.zsh.enable = true;
@@ -9,7 +8,6 @@
 
   environment = {
     shells = [ pkgs.fish ];
-    loginShell = pkgs.fish;
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
   };
@@ -32,7 +30,7 @@
     system = "aarch64-darwin";
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
