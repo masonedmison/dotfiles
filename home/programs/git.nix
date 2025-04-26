@@ -5,8 +5,6 @@
     userName = "Mason Edmison";
     userEmail = "mason.edmison@gmail.com";
 
-    delta.enable = true;
-
     aliases = {
       fp = "push --force-with-lease";
       rb = "rebase -i --autostash";

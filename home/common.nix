@@ -38,13 +38,13 @@
       bottom
       coursier
       curl
+      delta
       duf
       fd
       graphviz
       httpie
       jless
       lazydocker
-      lazygit
       lua
       nixd
       nixpkgs-fmt
@@ -93,6 +93,16 @@
         };
         cdnv = {
           body = "cd $argv; nvim .";
+        };
+      };
+    };
+    lazygit = {
+      enable = true;
+      settings = {
+        gui.showIcons = true;
+        git.paging = {
+          colorArg = "never";
+          pager = "delta --dark --paging=never --side-by-side --line-numbers";
         };
       };
     };
