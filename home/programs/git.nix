@@ -4,6 +4,15 @@
     enable = true;
     userName = "Mason Edmison";
     userEmail = "mason.edmison@gmail.com";
+    delta = {
+      enable = true;
+      options = {
+        dark = true;
+        line-numbers = true;
+        side-by-side = true;
+        navigate = true;
+      };
+    };
 
     aliases = {
       fp = "push --force-with-lease";

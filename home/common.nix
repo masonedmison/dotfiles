@@ -99,9 +99,13 @@
     lazygit = {
       enable = true;
       settings = {
-        gui.showIcons = true;
+        gui = {
+          showFileIcons = true;
+          sidePanelWidth = 0.2;
+          nerdFontsVersion = "3";
+        };
         git.paging = {
-          colorArg = "never";
+          colorArg = "always";
           pager = "delta --dark --paging=never --side-by-side --line-numbers";
         };
       };
