@@ -19,3 +19,7 @@ nix run home-manager/master -- init --switch
 ## FAQ
 Q: markdown preview fails with "tslib not found" error
     A: run `npm install` at `~/.local/share/nvim/lazy/markdown-preview.nvim`
+
+Q: `touchIdAuth` is not working when mac is plugged into docking station
+    A: Run `/usr/bin/defaults write ~/Library/Preferences/com.apple.security.authorization.plist ignoreArd -bool TRUE` and restart terminal--[source](https://discussions.apple.com/thread/255187302?sortBy=rank)
+
