@@ -11,6 +11,8 @@
         line-numbers = true;
         side-by-side = true;
         navigate = true;
+        hyperlinks = true;
+        hyperlinks-file-link-format = "nvim://{path}:{line}";
       };
     };
 

@@ -101,12 +101,12 @@
       settings = {
         gui = {
           showFileIcons = true;
-          sidePanelWidth = 0.2;
+          sidePanelWidth = 0.25;
           nerdFontsVersion = "3";
         };
         git.paging = {
           colorArg = "always";
-          pager = "delta --dark --paging=never --side-by-side --line-numbers";
+          pager = "delta --dark --paging=never --side-by-side --line-numbers --hyperlinks --hyperlinks-file-link-format=\"lazygit-edit://{path}:{line}\"";
         };
       };
     };
