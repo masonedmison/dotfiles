@@ -10,6 +10,7 @@
     shells = [ pkgs.fish ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
+    variables = { EDITOR = "nvim"; };
   };
 
   nix = {

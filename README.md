@@ -11,10 +11,19 @@ nix run home-manager/master -- init --switch
 5. Run `cs setup` and choose a JVM to set up, e.g. `cs java <jvm> --setup`
 6. Run `rustup default stable` to install necessary rust tooling (cargo, clippy, etc.).
 
+### To get `delta` hyperlinks to work on Mac
+
+> This assumes that `kitty` is configured with `listen_on = "unix:/tmp/mykitty"`
+
+- pull down this [repo](https://github.com/masonedmison/open-in-editor/tree/add-neovim-kitty-support)
+- copy the application bundle to `~/Library/Application Support/`
+- Install `duti` if not already (it should be installed in `darwin/common.nix`)
+- Run `duti -s org.dandavison.OpenInEditor nvim all`
 
 ## TODO
 - [ ] Programatically created systemd service and enable
 - [x] support both mac linux laptops (64 bit darwin and x86)
+- [ ] "nixify" OpenInEditor setup
 
 ## FAQ
 Q: markdown preview fails with "tslib not found" error
