@@ -1,3 +1,8 @@
+local dailies_folder_path = nil
+if os.getenv 'VAULT_NAME' then
+  dailies_folder_path = os.getenv 'VAULT_NAME' .. '/dailies'
+end
+
 return {
   'epwalsh/obsidian.nvim',
   version = '*', -- recommended, use latest release instead of latest commit
@@ -25,7 +30,7 @@ return {
         overrides = {
           daily_notes = {
             -- Optional, if you keep daily notes in a separate directory.
-            folder = os.getenv 'VAULT_NAME' .. '/dailies',
+            folder = dailies_folder_path,
             -- Optional, if you want to change the date format for the ID of daily notes.
             date_format = '%Y-%m-%d',
             -- Optional, if you want to change the date format of the default alias of daily notes.
