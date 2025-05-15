@@ -42,6 +42,15 @@ vim.keymap.set('n', '<leader>bc', function()
   end
 end, { desc = '[B]uffer [C]lose all but current' })
 
+-- Function to copy file path and line number in the format nvim://<path/to/file>:<line number>
+vim.keymap.set('n', '<leader>cf', function()
+  local current_file = vim.fn.expand '%:p'
+  local current_line = vim.fn.line '.'
+  local copy_text = 'nvim://' .. current_file .. ':' .. current_line
+  vim.fn.setreg('+', copy_text)
+  vim.notify('Copied: ' .. copy_text, vim.log.levels.INFO)
+end, { desc = 'Copy file path with line number in nvim:// format' })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
