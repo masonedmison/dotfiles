@@ -28,6 +28,9 @@ return {
           dap.terminate()
         end, {})
 
+        -- Always breakpoint on exceptions
+        dap.defaults.scala.exception_breakpoints = { 'uncaught' }
+
         dap.configurations.scala = {
           {
             type = 'scala',
@@ -35,6 +38,7 @@ return {
             name = 'DefaultRunOrTest',
             metals = {
               runType = 'runOrTestFile',
+              args = { 'internal' },
             },
           },
           {
@@ -59,6 +63,14 @@ return {
               runType = 'testTarget',
             },
           },
+          {
+            type = 'scala',
+            request = 'attach',
+            name = 'Attach to Localhost',
+            hostName = 'localhost',
+            port = 5005,
+            buildTarget = 'root',
+          },
         }
       end,
     },
@@ -69,6 +81,7 @@ return {
 
     -- Example of settings
     metals_config.settings = {
+      serverVersion = '1.5.1',
       showImplicitArguments = true,
       showInferredType = true,
       excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
@@ -138,9 +151,11 @@ return {
         require('dap.ui.widgets').preview()
       end, { desc = '[D]ebug [P]review' })
 
-      map({ 'n', 'v' }, '<Leader>de', function()
+      map({ 'n', 'v' }, '<Leader>dx', function()
         require('dap').set_exception_breakpoints()
-      end, { desc = '[D]ebug [E]xception Breakpoint' })
+      end, { desc = '[D]ebug E[x]ception Breakpoint' })
+
+      map({ 'n', 'v' }, '<Leader>de', function() end, { desc = '[D]ebug [E]xception Breakpoint' })
     end
 
     return metals_config
