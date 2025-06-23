@@ -62,6 +62,7 @@
       wget
       xclip
       yarn
+      yq
     ];
   };
 
