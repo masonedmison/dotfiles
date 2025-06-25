@@ -218,6 +218,7 @@ return {
         gitlab_ci_ls = {},
         rust_analyzer = {},
         jsonls = {},
+        bashls = {},
       }
 
       -- Ensure the servers and tools above are installed
