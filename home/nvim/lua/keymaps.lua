@@ -4,44 +4,6 @@
 -- unload buffer
 vim.keymap.set('n', '<leader>bu', ':bd <CR>', { desc = '[B]uffer [U]nload' })
 
--- Close all buffers but the current buffer not including "ignore-able" buffers.
--- If the current buffer is a toggleterm terminal, this is a noop.
-vim.keymap.set('n', '<leader>bc', function()
-  local bufs = vim.api.nvim_list_bufs()
-  local current_buf = vim.api.nvim_get_current_buf()
-  local ignores = { 'lazygit' }
-  -- get buffers that are not toggleterm buffers
-  local function non_ignores(bufs)
-    local non_ignores_arr = {}
-    local toggterm_curr = false
-    for _, bi in ipairs(bufs) do
-      local bufname = vim.api.nvim_buf_get_name(bi)
-      local maybe_togg_term = string.find(bufname, 'toggleterm')
-      local is_ignore = #vim.tbl_filter(function(ig)
-        return string.find(bufname, ig) ~= nil
-      end, ignores) > 0
-      if not maybe_togg_term and not is_ignore then
-        table.insert(non_ignores_arr, bi)
-      elseif maybe_togg_term and bi == current_buf then
-        toggterm_curr = true
-        break
-      end
-    end
-
-    return toggterm_curr, non_ignores_arr
-  end
-  local curr_is_term, filtered_buffs = non_ignores(bufs)
-  if curr_is_term then
-    print 'Current buffer is a terminal!'
-  else
-    for _, i in ipairs(filtered_buffs) do
-      if i ~= current_buf then
-        vim.api.nvim_buf_delete(i, {})
-      end
-    end
-  end
-end, { desc = '[B]uffer [C]lose all but current' })
-
 -- Function to copy file path and line number in the format nvim://<path/to/file>:<line number>
 vim.keymap.set('n', '<leader>cf', function()
   local current_file = vim.fn.expand '%:p'
