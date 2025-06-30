@@ -20,6 +20,10 @@ nix run home-manager/master -- init --switch
 - Install `duti` if not already (it should be installed in `darwin/common.nix`)
 - Run `duti -s org.dandavison.OpenInEditor nvim all`
 
+
+### Setup `codecompanion`
+- Get API key and place at `~/tokens/anthropic-token.txt`
+
 ## TODO
 - [ ] Programatically created systemd service and enable
 - [x] support both mac linux laptops (64 bit darwin and x86)
