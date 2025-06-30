@@ -7,6 +7,7 @@ return {
     bufdelete = { enabled = true },
     explorer = { enabled = true },
     git = { enabled = true },
+    gitbrowse = { enabled = true },
     lazygit = { enabled = true },
     picker = {
       enabled = true,
@@ -62,6 +63,15 @@ return {
         Snacks.git.blame_line()
       end,
       desc = '[B]lame [L]ine',
+    },
+    -- ****
+    -- gitbrowse
+    {
+      '<leader>go',
+      function()
+        Snacks.gitbrowse.open()
+      end,
+      desc = '[G]itbrowse [O]pen',
     },
     -- ****
     -- Exporer and Picker
@@ -197,6 +207,13 @@ return {
         Snacks.picker.undo()
       end,
       desc = 'Undo History',
+    },
+    {
+      '<leader>sk',
+      function()
+        Snacks.picker.keymaps()
+      end,
+      desc = 'Keymaps',
     },
     -- LSP
     -- TODO
