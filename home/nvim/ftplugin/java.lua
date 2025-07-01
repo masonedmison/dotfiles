@@ -1,6 +1,13 @@
+require 'mason'
+
 local home = os.getenv 'HOME'
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local jdtls_path = require('mason-registry').get_package('jdtls'):get_install_path()
+
+local get_package_install_path = function(package_name)
+  return vim.fn.expand('$MASON/packages/' .. package_name)
+end
+
+local jdtls_path = get_package_install_path 'jdtls'
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
