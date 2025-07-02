@@ -36,7 +36,7 @@
 
       mkDarwin = { userConfig, extraModules ? [ ], extraArgs ? { }, extraHmModules ? [ ] }: darwin.lib.darwinSystem {
         system = userConfig.architecture;
-        specialArgs = { inherit self; };
+        specialArgs = { inherit self userConfig; };
         modules =
           [
             ./darwin/darwin-configuration.nix

@@ -1,4 +1,4 @@
-{ pkgs, ... }@inputs:
+{ pkgs, userConfig, ... }@inputs:
 {
 
   # It seems like this is needed even though I don't use zsh?
@@ -14,7 +14,7 @@
   };
 
   nix = {
-    settings.trusted-users = [ "medmison" ];
+    settings.trusted-users = [ userConfig.username ];
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -28,7 +28,7 @@
       allowUnfree = true;
       allowUnfreePredicate = _: true;
     };
-    system = "aarch64-darwin";
+    system = userConfig.architecture;
   };
 
   security.pam.services.sudo_local.touchIdAuth = true;
