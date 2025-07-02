@@ -15,7 +15,7 @@
     userConfig = {
       username = "medmison";
       userDir = "/Users/medmison";
-      architecture = "aarch64-linux";
+      architecture = "aarch64-darwin";
       obsidian = {
         vaultPath = "/Users/medmison/vaults/mdm";
         vaultName = "mdm";
@@ -27,7 +27,7 @@
     userConfig = {
       username = "edmisml";
       userDir = "/Users/edmisml";
-      architecture = "aarch64-linux";
+      architecture = "aarch64-darwin";
     };
   };
 }
