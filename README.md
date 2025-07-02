@@ -1,5 +1,5 @@
 ## Manual steps
-**set system to correct architecture -- there is a TODO to capture both my mac and linux boxes**
+**set system to correct architecture
 
 1. Install [Nix](https://zero-to-nix.com/concepts/nix-installer)
 2. Build `home-manager` using the flake found in `./home-manager`
