@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     discord
     gdb
+    jetbrains.idea-community
     kmonad
     spotify
   ];
