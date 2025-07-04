@@ -1,0 +1,29 @@
+let mapleader=" "    " Sets space as the leader key
+nmap <leader>sf <Action>(GotoFile)
+nmap <leader>ws <Action>(GotoSymbol)
+" Window navigation
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <leader><leader> <Action>(RecentFiles)
+nmap <leader>sg <Action>(FindInPath)
+nmap gr <Action>(ShowUsages)
+nmap gI <Action>(GotoImplementation)
+nnoremap <leader>nr :action SelectInProjectView<CR>
+nnoremap <leader>nt :action ActivateProjectToolWindow<CR>
+nnoremap <leader>e :action ShowErrorDescription<CR>
+set relativenumber
+nnoremap <leader>ds :action FileStructurePopup<CR>
+nmap <leader>z <Action>(ToggleDistractionFreeMode)
+map <C-y> <Action>(ChooseLookupItem)
+sethandler <C-y> i:ide
+map gc <Action>(CommentByLineComment)
+map <leader>wm <Action>(SearchEverywhere)
+map <leader>ca <Action>(ShowIntentionActions)
+nnoremap <leader>bc :action CloseAllEditorsButActive<CR>
+map <leader>rn :action RenameElement<CR>
+map <leader>xx :action ActivateProblemsViewToolWindow<CR>
+nnoremap gt :action GotoTest<CR>
+map <leader>db :action ToggleLineBreakpoint<CR>
+map <leader>tb :action Annotate<CR>

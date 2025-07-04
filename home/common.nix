@@ -1,4 +1,4 @@
-{ pkgs, inputs, userConfig, stdenv, ... }:
+{ pkgs, inputs, userConfig, config, ... }:
 
 {
 
@@ -31,9 +31,15 @@
     stateVersion = "22.11";
 
     # symlink .editorconfig file to home
-    file.".editorconfig" = {
-      source = ./.editorconfig;
+    file = {
+      ".editorconfig" = {
+        source = ./.editorconfig;
+      };
+      ".ideavimrc" = {
+        source = config.lib.file.mkOutOfStoreSymlink ./intellij/.ideavimrc;
+      };
     };
+
     packages = with pkgs; [
       bottom
       coursier
