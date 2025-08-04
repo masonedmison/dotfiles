@@ -50,6 +50,6 @@
   # to ~/.config/aerospace for quicker update cycles
   xdg.configFile."aerospace/aerospace.toml" = {
     recursive = true;
-    source = config.lib.file.mkOutOfStoreSymlink /Users/medmison/dotfiles/home/aerospace/aerospace.toml;
+    source = config.lib.file.mkOutOfStoreSymlink ./aerospace/aerospace.toml;
   };
 }
