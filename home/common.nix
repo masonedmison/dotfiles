@@ -7,7 +7,7 @@
     ./programs/vscode
     ./programs/git.nix
     ./programs/neovim.nix
-    ./programs/kitty.nix
+    ./programs/kitty/kitty.nix
     ./programs/starship.nix
   ];
 

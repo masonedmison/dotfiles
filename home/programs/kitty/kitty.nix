@@ -1,4 +1,9 @@
 { config, pkgs, ... }: {
+
+  xdg.configFile."kitty/vi-mode.lua" = {
+    source = ./vi-mode.lua;
+  };
+
   programs.kitty = {
     enable = true;
     shellIntegration.enableFishIntegration = true;
@@ -22,6 +27,7 @@
       cursor_blink_interval = 0;
       allow_remote_control = "yes";
       listen_on = "unix:/tmp/mykitty";
+      scrollback_pager = "nvim -c \"lua dofile('${config.home.homeDirectory}/.config/kitty/vi-mode.lua').colorize()\"";
     };
     keybindings = {
       "ctrl+shift+alt+l" = "next_layout";
@@ -32,6 +38,9 @@
       "ctrl+shift+alt+u" = "previous_window";
       "ctrl+shift+alt+i" = "next_window";
 
+      "ctrl+shift+alt+1" = "goto_layout tall:bias=50;full_size=1;mirrored=false";
+      "ctrl+shift+alt+2" = "goto_layout stack";
+
       # tab shortcuts
       "ctrl+shift+alt+t" = "new_tab";
       "ctrl+shift+alt+q" = "close_tab";
@@ -39,6 +48,8 @@
       "ctrl+shift+alt+j" = "previous_tab";
       "ctrl+shift+alt+k" = "next_tab";
       "ctrl+shift+alt+d" = "detach_tab";
+
+      "ctrl+shift+alt+v" = "show_scrollback";
 
     };
     extraConfig = ''
