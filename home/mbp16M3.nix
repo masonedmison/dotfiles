@@ -41,6 +41,8 @@
       mdmwu = "cd ~/mdm/worktrees/mdu";
 
       drb = "darwin-rebuild switch --flake ~/dotfiles/#medmison";
+
+      qc = "q chat --trust-tools fs_write,get-library-docs,resolve-library-id";
     };
   };
 
