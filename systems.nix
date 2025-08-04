@@ -8,7 +8,7 @@
         vaultPath = "/home/edmisml/vaults/personal";
         vaultName = "personal";
       };
-      fishPath = "/home/edmisml/.nix-profile/bin/fish";
+      binPath = "/home/edmisml/.nix-profile/bin";
     };
   };
   workmac = {
@@ -20,7 +20,7 @@
         vaultPath = "/Users/medmison/vaults/mdm";
         vaultName = "mdm";
       };
-      fishPath = "/etc/profiles/per-user/medmison/bin/fish";
+      binPath = "/etc/profiles/per-user/medmison/bin";
     };
   };
   mbp13 = {

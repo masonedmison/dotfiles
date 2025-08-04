@@ -26,7 +26,7 @@
       EDITOR = "nvim";
       VAULT_PATH = userConfig.obsidian.vaultPath;
       VAULT_NAME = userConfig.obsidian.vaultName;
-      FISH_PATH = userConfig.fishPath;
+      FISH_PATH = userConfig.binPath + "/fish";
     };
     stateVersion = "22.11";
 
