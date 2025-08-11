@@ -28,9 +28,6 @@ return {
           dap.terminate()
         end, {})
 
-        -- Always breakpoint on exceptions
-        dap.defaults.scala.exception_breakpoints = { 'uncaught' }
-
         dap.configurations.scala = {
           {
             type = 'scala',
@@ -154,8 +151,6 @@ return {
       map({ 'n', 'v' }, '<Leader>dx', function()
         require('dap').set_exception_breakpoints()
       end, { desc = '[D]ebug E[x]ception Breakpoint' })
-
-      map({ 'n', 'v' }, '<Leader>de', function() end, { desc = '[D]ebug [E]xception Breakpoint' })
     end
 
     return metals_config
