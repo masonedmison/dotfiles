@@ -53,7 +53,7 @@
       mdmwca = "cd ~/mdm/worktrees/mdca";
       mdmwu = "cd ~/mdm/worktrees/mdu";
 
-      drb = "darwin-rebuild switch --flake ~/dotfiles/#medmison";
+      drb = "sudo darwin-rebuild switch --flake ~/dotfiles/#medmison";
 
       qc = "q chat --trust-tools fs_write,get-library-docs,resolve-library-id";
     };
