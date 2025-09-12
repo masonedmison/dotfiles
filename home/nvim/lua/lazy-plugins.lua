@@ -23,6 +23,7 @@ require('lazy').setup({
   -- include a plugin definition from file lua/path/name.lua
   require 'edmisml.plugins.autopairs',
   require 'edmisml.plugins.bufferline',
+  require 'edmisml.plugins.claude',
   require 'edmisml.plugins.cmp',
   require 'edmisml.plugins.code-action-lightbulb',
   require 'edmisml.plugins.codecompanion',
