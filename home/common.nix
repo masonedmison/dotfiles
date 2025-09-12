@@ -55,7 +55,6 @@
       lua
       nixd
       nixpkgs-fmt
-      nodejs_22
       obsidian
       p7zip
       pstree
