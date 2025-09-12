@@ -33,6 +33,8 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  system.primaryUser = userConfig.username;
+
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
   system.defaults = {
