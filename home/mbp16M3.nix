@@ -11,8 +11,8 @@
     sessionVariables = {
       CLAUDE_CODE_USE_BEDROCK = 1;
       AWS_REGION = "us-east-1";
-      ANTHROPIC_MODEL = "us.anthropic.claude-sonnet-4-20250514-v1:0";
-      ANTHROPIC_SMALL_FAST_MODEL = "us.anthropic.claude-3-5-haiku-20241022-v1:0";
+      ANTHROPIC_MODEL = "arn:aws:bedrock:us-east-1:906177868613:application-inference-profile/jqsg88qb8n4m";
+      ANTHROPIC_SMALL_FAST_MODEL = "arn:aws:bedrock:us-east-1:906177868613:application-inference-profile/6v24g7357kk5";
       CLAUDE_CODE_MAX_OUTPUT_TOKENS = 8192;
       MAX_THINKING_TOKENS = 1024;
       AWS_PROFILE = "DevOpsShared";
