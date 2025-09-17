@@ -4,6 +4,7 @@
   home = {
     packages = [
       pkgs.helmfile
+      pkgs.kafkactl
       pkgs.kubectl
       pkgs.kubernetes-helm
       pkgs.jira-cli-go
