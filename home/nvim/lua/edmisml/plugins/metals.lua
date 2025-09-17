@@ -78,10 +78,13 @@ return {
 
     -- Example of settings
     metals_config.settings = {
-      serverVersion = '1.5.1',
+      serverVersion = '1.6.2',
       showImplicitArguments = true,
       showInferredType = true,
       excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
+      defaultBspToBuildTool = true,
+      startMcpServer = true,
+      mcpClient = 'claude',
       -- testUserInterface = 'Test Explorer',
     }
 
