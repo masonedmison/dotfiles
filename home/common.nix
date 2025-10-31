@@ -45,7 +45,6 @@
       bottom
       coursier
       curl
-      delta
       duf
       fd
       graphviz
