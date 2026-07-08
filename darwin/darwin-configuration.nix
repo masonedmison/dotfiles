@@ -3,8 +3,19 @@
 
   # It seems like this is needed even though I don't use zsh?
   programs.zsh.enable = true;
-  homebrew.enable = true;
-  homebrew.onActivation.cleanup = "uninstall";
+  homebrew = {
+    enable = true;
+
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap"; # Uninstall packages/casks not in Brewfile
+      upgrade = true;
+    };
+
+    global = {
+      brewfile = true;
+    };
+  };
 
   environment = {
     shells = [ pkgs.fish ];
