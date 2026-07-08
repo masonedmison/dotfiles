@@ -9,6 +9,7 @@
       pkgs.kubernetes-helm
       pkgs.jira-cli-go
       pkgs.sops
+      pkgs.glab
     ];
     sessionVariables = {
       CLAUDE_CODE_USE_BEDROCK = 1;
