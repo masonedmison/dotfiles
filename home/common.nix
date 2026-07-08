@@ -80,7 +80,9 @@
       enable = true;
       shellInit = ''
         starship init fish | source
-        set -gx'';
+        set -gx
+        set fish_color_command blue
+      '';
       shellAliases = {
         g = "git";
         dt = "cd ~/dotfiles; nvim";
@@ -110,10 +112,12 @@
           sidePanelWidth = 0.25;
           nerdFontsVersion = "3";
         };
-        git.paging = {
-          colorArg = "always";
-          pager = "delta --dark --paging=never --side-by-side --line-numbers --hyperlinks --hyperlinks-file-link-format=\"lazygit-edit://{path}:{line}\"";
-        };
+        git.pagers = [
+          {
+            colorArg = "always";
+            pager = "delta --dark --paging=never --side-by-side --line-numbers --hyperlinks --hyperlinks-file-link-format=\"lazygit-edit://{path}:{line}\"";
+          }
+        ];
       };
     };
     less.enable = true;
