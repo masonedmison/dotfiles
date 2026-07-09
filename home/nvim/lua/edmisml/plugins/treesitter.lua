@@ -1,11 +1,18 @@
--- Treesitter configuration for Nvim 0.12+
--- nvim-treesitter plugin is no longer needed; Nvim handles parsers, highlighting,
--- indentation, and folding natively.
-
 return {
+  { -- Parser installation and query management (nvim 0.12+ rewrite)
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    config = function()
+      require('nvim-treesitter').setup {
+        install_dir = vim.fn.stdpath('data') .. '/site',
+      }
+      require('nvim-treesitter').install { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'nix', 'query', 'scala', 'vim', 'vimdoc', 'yaml' }
+    end,
+  },
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
     branch = 'main',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = 'VeryLazy',
     config = function()
       require('nvim-treesitter-textobjects').setup {

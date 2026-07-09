@@ -64,6 +64,7 @@
       tldr
       tokei
       tree
+      tree-sitter
       wget
       xclip
       yarn
