@@ -28,7 +28,10 @@
       allow_remote_control = "yes";
       listen_on = "unix:/tmp/mykitty";
       scrollback_pager = "nvim -c \"lua dofile('${config.home.homeDirectory}/.config/kitty/vi-mode.lua').colorize()\"";
-      window_border_width = "1.5pt";
+      window_border_width = "3pt";
+      active_tab_background = "#14b8a6";
+      active_border_color = "#1d4ed8";
+      draw_minimal_borders = "no";
     };
     keybindings = {
       "ctrl+shift+alt+l" = "next_layout";
