@@ -44,12 +44,7 @@ return {
             name = 'WorkRunOrTest',
             metals = {
               runType = 'runOrTestFile',
-              env = {
-                KAFKA_SERVERS = 'http://127.0.0.1:9092',
-                SCHEMA_REGISTRY_URL = 'http://127.0.0.1:8081',
-                DYNAMO_URL = 'http://127.0.0.1:8000',
-                S3_URL = 'http://127.0.0.1:4566',
-              },
+              envFile = '/Users/medmison/betting_engine/grades-and-limits.worktrees/CZRBE-3364/.gpt.env',
             },
           },
           {
@@ -78,13 +73,11 @@ return {
 
     -- Example of settings
     metals_config.settings = {
-      serverVersion = '1.6.2',
+      serverVersion = '1.6.6',
       showImplicitArguments = true,
       showInferredType = true,
       excludedPackages = { 'akka.actor.typed.javadsl', 'com.github.swagger.akka.javadsl' },
       defaultBspToBuildTool = true,
-      startMcpServer = true,
-      mcpClient = 'claude',
       -- testUserInterface = 'Test Explorer',
     }
 
