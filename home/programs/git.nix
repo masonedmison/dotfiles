@@ -17,7 +17,7 @@
       settings = {
         user = {
           name = "Mason Edmison";
-          email = "mason.edmison@gmail.com";
+          email = "medmison@caesars.com";
         };
         aliases = {
           fp = "push --force-with-lease";
