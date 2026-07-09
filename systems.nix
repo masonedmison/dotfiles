@@ -4,6 +4,7 @@
       username = "edmisml";
       userDir = "/home/edmisml";
       architecture = "x86_64-linux";
+      email = "mason.edmison@gmail.com";
       obsidian = {
         vaultPath = "/home/edmisml/vaults/personal";
         vaultName = "personal";
@@ -16,6 +17,7 @@
       username = "medmison";
       userDir = "/Users/medmison";
       architecture = "aarch64-darwin";
+      email = "medmison@caesars.com";
       obsidian = {
         vaultPath = "/Users/medmison/vaults/mdm";
         vaultName = "mdm";
@@ -28,6 +30,7 @@
       username = "edmisml";
       userDir = "/Users/edmisml";
       architecture = "aarch64-darwin";
+      email = "mason.edmison@gmail.com";
     };
   };
 }

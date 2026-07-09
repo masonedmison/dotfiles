@@ -1,4 +1,4 @@
-{ ... }:
+{ userConfig, ... }:
 {
   programs = {
     delta = {
@@ -17,7 +17,7 @@
       settings = {
         user = {
           name = "Mason Edmison";
-          email = "medmison@caesars.com";
+          email = userConfig.email;
         };
         aliases = {
           fp = "push --force-with-lease";
