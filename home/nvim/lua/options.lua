@@ -75,6 +75,8 @@ vim.opt.scrolloff = 10
 vim.opt.relativenumber = true
 
 -- Folding options
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 -- Syntax highlighting first line of the fold
 vim.opt.foldtext = ''
 -- Set this to a high number to prevent folds
