@@ -26,7 +26,6 @@ require('lazy').setup({
   require 'edmisml.plugins.claude',
   require 'edmisml.plugins.cmp',
   require 'edmisml.plugins.code-action-lightbulb',
-  require 'edmisml.plugins.codecompanion',
   require 'edmisml.plugins.conform',
   require 'edmisml.plugins.gitsigns',
   require 'edmisml.plugins.harpoon',
