@@ -52,6 +52,8 @@
       "ctrl+shift+alt+j" = "previous_tab";
       "ctrl+shift+alt+k" = "next_tab";
       "ctrl+shift+alt+d" = "detach_tab";
+      "ctrl+shift+alt+," = "move_tab_forward";
+      "ctrl+shift+alt+m" = "move_tab_backward";
 
       "ctrl+shift+alt+v" = "show_scrollback";
 
